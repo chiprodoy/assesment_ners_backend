@@ -14,6 +14,8 @@ use Illuminate\Validation\Rules;
 class RegisteredUserController extends Controller
 {
     /**
+     * Register
+     *
      * Handle an incoming registration request.
      *
      * @throws \Illuminate\Validation\ValidationException
@@ -22,12 +24,16 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'nidn_npm' => ['required', 'string'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'telepon' => ['required', 'string','min:10','max:13'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
+            'nidn_npm'=> $request->nidn_npm,
+            'telepon'=> $request->telepon,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
@@ -36,6 +42,10 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return response()->noContent();
+        if($request->wantsJson()){
+            return response('ok');
+        }else{
+            return response()->noContent();
+        }
     }
 }

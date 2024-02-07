@@ -18,6 +18,8 @@ class AuthenticatedSessionController extends Controller
 
     public $user;
     /**
+     * Login
+     *
      * Handle an incoming authentication request.
      */
     public function store(LoginRequest $request)
@@ -37,6 +39,8 @@ class AuthenticatedSessionController extends Controller
     }
 
     /**
+     * Logout
+     *
      * Destroy an authenticated session.
      */
     public function destroy(Request $request): Response
