@@ -26,7 +26,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: bedlurltkxqrsbvjyj
+        example: czbty
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -35,7 +35,7 @@ endpoints:
         name: nidn_npm
         description: ''
         required: true
-        example: sit
+        example: consectetur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -44,7 +44,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: gisselle77@example.net
+        example: wharber@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -53,7 +53,7 @@ endpoints:
         name: telepon
         description: 'Must be at least 10 characters. Must not be greater than 13 characters.'
         required: true
-        example: wgkmaahen
+        example: hcomxfjek
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -62,17 +62,17 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: impedit
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: bedlurltkxqrsbvjyj
-      nidn_npm: sit
-      email: gisselle77@example.net
-      telepon: wgkmaahen
-      password: impedit
+      name: czbty
+      nidn_npm: consectetur
+      email: wharber@example.org
+      telepon: hcomxfjek
+      password: voluptas
     fileParameters: []
     responses: []
     responseFields: []
@@ -106,7 +106,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: neoma72@example.net
+        example: fredy.schaden@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -115,14 +115,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: "x'%8/d^R5T!esK#;)Dr["
+        example: 'AGjF7>0K]/A/MvcSk'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: neoma72@example.net
-      password: "x'%8/d^R5T!esK#;)Dr["
+      email: fredy.schaden@example.org
+      password: 'AGjF7>0K]/A/MvcSk'
     fileParameters: []
     responses: []
     responseFields: []
@@ -142,7 +142,7 @@ endpoints:
       subgroupDescription: ''
       title: 'Mata Kuliah'
       description: 'Get Mata Kuliah data'
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
       Content-Type: application/json

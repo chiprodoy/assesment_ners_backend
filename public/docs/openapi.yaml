@@ -26,23 +26,23 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: bedlurltkxqrsbvjyj
+                  example: czbty
                 nidn_npm:
                   type: string
                   description: ''
-                  example: sit
+                  example: consectetur
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: gisselle77@example.net
+                  example: wharber@example.org
                 telepon:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 13 characters.'
-                  example: wgkmaahen
+                  example: hcomxfjek
                 password:
                   type: string
                   description: ''
-                  example: impedit
+                  example: voluptas
               required:
                 - name
                 - nidn_npm
@@ -69,11 +69,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: neoma72@example.net
+                  example: fredy.schaden@example.org
                 password:
                   type: string
                   description: ''
-                  example: "x'%8/d^R5T!esK#;)Dr["
+                  example: 'AGjF7>0K]/A/MvcSk'
               required:
                 - email
                 - password
@@ -99,7 +99,6 @@ paths:
                     example: Unauthenticated.
       tags:
         - Endpoints
-      security: []
   /api/logout:
     get:
       summary: Logout

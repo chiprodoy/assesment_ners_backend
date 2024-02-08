@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "ceb00b3a-1369-4c21-b887-b661abdf63b7",
+        "_postman_id": "8e3d1a00-1bd8-4301-9a23-7b7463afd495",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"bedlurltkxqrsbvjyj\",\"nidn_npm\":\"sit\",\"email\":\"gisselle77@example.net\",\"telepon\":\"wgkmaahen\",\"password\":\"impedit\"}"
+                            "raw": "{\"name\":\"czbty\",\"nidn_npm\":\"consectetur\",\"email\":\"wharber@example.org\",\"telepon\":\"hcomxfjek\",\"password\":\"voluptas\"}"
                         },
                         "description": "Handle an incoming registration request.",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"neoma72@example.net\",\"password\":\"x'%8\\\/d^R5T!esK#;)Dr[\"}"
+                            "raw": "{\"email\":\"fredy.schaden@example.org\",\"password\":\"AGjF7>0K]\\\/A\\\/MvcSk\"}"
                         },
                         "description": "Handle an incoming authentication request.",
                         "auth": {
@@ -102,10 +102,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "Get Mata Kuliah data",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": "Get Mata Kuliah data"
                     },
                     "response": [
                         {

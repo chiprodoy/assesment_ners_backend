@@ -15,6 +15,7 @@ class MataKuliahController extends MainController
      * Mata Kuliah
      *
      * Get Mata Kuliah data
+     * @authenticated
      */
     public function index(){
         return MataKuliahResource::collection($this->getRecord()->get());
