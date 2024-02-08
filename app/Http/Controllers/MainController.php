@@ -8,11 +8,16 @@ class MainController extends Controller
 {
 
     public $model;
+    public $record;
+
+    public function setRecord()
+    {
+        $this->record=$this->model::orderBy('id','desc');
+    }
 
     public function getRecord()
     {
-        $record=$this->model::orderBy('id','desc');
-        return $record;
+        return $this->record;
     }
 
     /**

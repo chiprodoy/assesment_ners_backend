@@ -18,6 +18,7 @@ class MataKuliahController extends MainController
      * @authenticated
      */
     public function index(){
-        return MataKuliahResource::collection($this->getRecord()->get());
+        $this->setRecord();
+        return MataKuliahResource::collection($this->record->get());
     }
 }

@@ -26,7 +26,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: czbty
+        example: jkar
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -35,7 +35,7 @@ endpoints:
         name: nidn_npm
         description: ''
         required: true
-        example: consectetur
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -44,7 +44,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: wharber@example.org
+        example: mhills@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -53,7 +53,7 @@ endpoints:
         name: telepon
         description: 'Must be at least 10 characters. Must not be greater than 13 characters.'
         required: true
-        example: hcomxfjek
+        example: ryqypepqdbbb
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -62,17 +62,17 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: voluptas
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: czbty
-      nidn_npm: consectetur
-      email: wharber@example.org
-      telepon: hcomxfjek
-      password: voluptas
+      name: jkar
+      nidn_npm: et
+      email: mhills@example.net
+      telepon: ryqypepqdbbb
+      password: ut
     fileParameters: []
     responses: []
     responseFields: []
@@ -106,7 +106,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: fredy.schaden@example.org
+        example: fkonopelski@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -115,14 +115,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'AGjF7>0K]/A/MvcSk'
+        example: 'S(*:v~z#'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: fredy.schaden@example.org
-      password: 'AGjF7>0K]/A/MvcSk'
+      email: fkonopelski@example.org
+      password: 'S(*:v~z#'
     fileParameters: []
     responses: []
     responseFields: []
@@ -149,6 +149,55 @@ endpoints:
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/asesmen/{mata_kuliah_uuid}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Asesmen
+      description: 'Get Asesmen data'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      mata_kuliah_uuid:
+        name: mata_kuliah_uuid
+        description: ''
+        required: true
+        example: d44baa2a-055a-35c9-8a3c-edfd8c1cb191
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      mata_kuliah_uuid: d44baa2a-055a-35c9-8a3c-edfd8c1cb191
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

@@ -26,23 +26,23 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: czbty
+                  example: jkar
                 nidn_npm:
                   type: string
                   description: ''
-                  example: consectetur
+                  example: et
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: wharber@example.org
+                  example: mhills@example.net
                 telepon:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 13 characters.'
-                  example: hcomxfjek
+                  example: ryqypepqdbbb
                 password:
                   type: string
                   description: ''
-                  example: voluptas
+                  example: ut
               required:
                 - name
                 - nidn_npm
@@ -69,11 +69,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: fredy.schaden@example.org
+                  example: fkonopelski@example.org
                 password:
                   type: string
                   description: ''
-                  example: 'AGjF7>0K]/A/MvcSk'
+                  example: 'S(*:v~z#'
               required:
                 - email
                 - password
@@ -99,6 +99,36 @@ paths:
                     example: Unauthenticated.
       tags:
         - Endpoints
+  '/api/asesmen/{mata_kuliah_uuid}':
+    get:
+      summary: Asesmen
+      operationId: asesmen
+      description: 'Get Asesmen data'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: mata_kuliah_uuid
+        description: ''
+        example: d44baa2a-055a-35c9-8a3c-edfd8c1cb191
+        required: true
+        schema:
+          type: string
   /api/logout:
     get:
       summary: Logout

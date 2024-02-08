@@ -10,10 +10,18 @@ class Asesmen extends MainModel
     use HasFactory;
 
         /**
-     * Get Assesmen
+     * Get Kompetensi Relationship
      */
     public function kompetensis()
     {
         return $this->hasMany(Kompetensi::class);
+    }
+
+     /**
+     * Get Matakuliah Relationship
+     */
+    public function mata_kuliah()
+    {
+        return $this->belongsTo(MataKuliah::class);
     }
 }
