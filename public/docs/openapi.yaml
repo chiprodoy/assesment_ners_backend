@@ -26,11 +26,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: wolf.jenifer@example.net
+                  example: cjacobs@example.org
                 password:
                   type: string
                   description: ''
-                  example: 'b[yOD/kYd'
+                  example: 'e#4Rcx_L6'
               required:
                 - email
                 - password
@@ -54,18 +54,28 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vlcucvdztxooavwtjgc
+                  example: ajhadl
+                nidn_npm:
+                  type: string
+                  description: ''
+                  example: alias
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: toy.rickey@example.net
+                  example: trisha.satterfield@example.org
+                telepon:
+                  type: string
+                  description: 'Must be at least 10 characters. Must not be greater than 13 characters.'
+                  example: eikemg
                 password:
                   type: string
                   description: ''
-                  example: eveniet
+                  example: magni
               required:
                 - name
+                - nidn_npm
                 - email
+                - telepon
                 - password
       security: []
   /api/logout:

@@ -130,8 +130,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"wolf.jenifer@example.net\",
-    \"password\": \"b[yOD\\/kYd\"
+    \"email\": \"cjacobs@example.org\",
+    \"password\": \"e#4Rcx_L6\"
 }"
 </code></pre></div>
 
@@ -147,8 +147,8 @@ const headers = {
 };
 
 let body = {
-    "email": "wolf.jenifer@example.net",
-    "password": "b[yOD\/kYd"
+    "email": "cjacobs@example.org",
+    "password": "e#4Rcx_L6"
 };
 
 fetch(url, {
@@ -237,10 +237,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="wolf.jenifer@example.net"
+               value="cjacobs@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>wolf.jenifer@example.net</code></p>
+<p>Must be a valid email address. Example: <code>cjacobs@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -248,10 +248,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="b[yOD/kYd"
+               value="e#4Rcx_L6"
                data-component="body">
     <br>
-<p>Example: <code>b[yOD/kYd</code></p>
+<p>Example: <code>e#4Rcx_L6</code></p>
         </div>
         </form>
 
@@ -272,9 +272,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"vlcucvdztxooavwtjgc\",
-    \"email\": \"toy.rickey@example.net\",
-    \"password\": \"eveniet\"
+    \"name\": \"ajhadl\",
+    \"nidn_npm\": \"alias\",
+    \"email\": \"trisha.satterfield@example.org\",
+    \"telepon\": \"eikemg\",
+    \"password\": \"magni\"
 }"
 </code></pre></div>
 
@@ -290,9 +292,11 @@ const headers = {
 };
 
 let body = {
-    "name": "vlcucvdztxooavwtjgc",
-    "email": "toy.rickey@example.net",
-    "password": "eveniet"
+    "name": "ajhadl",
+    "nidn_npm": "alias",
+    "email": "trisha.satterfield@example.org",
+    "telepon": "eikemg",
+    "password": "magni"
 };
 
 fetch(url, {
@@ -381,10 +385,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-register"
-               value="vlcucvdztxooavwtjgc"
+               value="ajhadl"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vlcucvdztxooavwtjgc</code></p>
+<p>Must not be greater than 255 characters. Example: <code>ajhadl</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>nidn_npm</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="nidn_npm"                data-endpoint="POSTapi-register"
+               value="alias"
+               data-component="body">
+    <br>
+<p>Example: <code>alias</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -392,10 +407,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-register"
-               value="toy.rickey@example.net"
+               value="trisha.satterfield@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>toy.rickey@example.net</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>trisha.satterfield@example.org</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>telepon</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="telepon"                data-endpoint="POSTapi-register"
+               value="eikemg"
+               data-component="body">
+    <br>
+<p>Must be at least 10 characters. Must not be greater than 13 characters. Example: <code>eikemg</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -403,10 +429,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-register"
-               value="eveniet"
+               value="magni"
                data-component="body">
     <br>
-<p>Example: <code>eveniet</code></p>
+<p>Example: <code>magni</code></p>
         </div>
         </form>
 

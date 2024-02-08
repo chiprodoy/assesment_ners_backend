@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\MataKuliahController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,18 +19,20 @@ use App\Http\Controllers\Auth\NewPasswordController;
 |
 */
 
-
+Route::post('/register', [RegisteredUserController::class, 'store'])
+                ->middleware('guest')
+                ->name('register');
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->middleware('guest')
                 ->name('login');
 
-Route::post('/register', [RegisteredUserController::class, 'store'])
-                ->middleware('guest')
-                ->name('register');
+Route::get('/matakuliah', [MataKuliahController::class, 'index'])
+                ->middleware('auth')
+                ->name('matakuliah.index');
 
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])
-                ->middleware('auth')
+                ->middleware('auth:sanctum')
                 ->name('logout');
 
 

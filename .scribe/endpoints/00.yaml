@@ -26,7 +26,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: wolf.jenifer@example.net
+        example: cjacobs@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -35,14 +35,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'b[yOD/kYd'
+        example: 'e#4Rcx_L6'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: wolf.jenifer@example.net
-      password: 'b[yOD/kYd'
+      email: cjacobs@example.org
+      password: 'e#4Rcx_L6'
     fileParameters: []
     responses: []
     responseFields: []
@@ -76,7 +76,16 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: vlcucvdztxooavwtjgc
+        example: ajhadl
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      nidn_npm:
+        name: nidn_npm
+        description: ''
+        required: true
+        example: alias
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -85,7 +94,16 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: toy.rickey@example.net
+        example: trisha.satterfield@example.org
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      telepon:
+        name: telepon
+        description: 'Must be at least 10 characters. Must not be greater than 13 characters.'
+        required: true
+        example: eikemg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -94,15 +112,17 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: eveniet
+        example: magni
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: vlcucvdztxooavwtjgc
-      email: toy.rickey@example.net
-      password: eveniet
+      name: ajhadl
+      nidn_npm: alias
+      email: trisha.satterfield@example.org
+      telepon: eikemg
+      password: magni
     fileParameters: []
     responses: []
     responseFields: []

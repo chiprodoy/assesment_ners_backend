@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Kompetensi;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,16 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('sub_kompetensis', function (Blueprint $table) {
             $table->id();
             $table->uuid();
-            $table->string('name');
-            $table->string('nidn_npm');
-            $table->string('telepon');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->foreignIdFor(Kompetensi::class);
+            $table->string('nama_sub_kompetensi');
+            $table->string('skor_penilaian')->default('0,1,2,3,4'); //0,1,2,3,4 //1-10
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('sub_kompetensis');
     }
 };

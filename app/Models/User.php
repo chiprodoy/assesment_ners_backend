@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -44,4 +45,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    /**
+     * set uuid
+     */
+    public function setUuidAttribute($value){
+        $this->attributes['uuid'] = (Str::isUuid($value) ? $value : Str::uuid()); //
+    }
+
+    /**
+     * Get the comments for the blog post.
+     */
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
 }

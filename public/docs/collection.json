@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "41080c8c-0555-4140-995b-9f1cd177da54",
+        "_postman_id": "cdc44aec-3815-415e-bcc9-a0cc6b72fca8",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"wolf.jenifer@example.net\",\"password\":\"b[yOD\\\/kYd\"}"
+                            "raw": "{\"email\":\"cjacobs@example.org\",\"password\":\"e#4Rcx_L6\"}"
                         },
                         "description": "Handle an incoming authentication request.",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"vlcucvdztxooavwtjgc\",\"email\":\"toy.rickey@example.net\",\"password\":\"eveniet\"}"
+                            "raw": "{\"name\":\"ajhadl\",\"nidn_npm\":\"alias\",\"email\":\"trisha.satterfield@example.org\",\"telepon\":\"eikemg\",\"password\":\"magni\"}"
                         },
                         "description": "Handle an incoming registration request.",
                         "auth": {
