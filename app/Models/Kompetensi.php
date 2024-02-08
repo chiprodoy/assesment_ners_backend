@@ -16,4 +16,12 @@ class Kompetensi extends MainModel
     {
         return $this->hasMany(SubKompetensi::class);
     }
+
+     /**
+     * Get asesmen
+     */
+    public function asesmen()
+    {
+        return $this->belongsTo(Asesmen::class);
+    }
 }

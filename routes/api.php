@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\AsesmenController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\KompetensiController;
 use App\Http\Controllers\MataKuliahController;
 
 /*
@@ -30,6 +32,14 @@ Route::post('/login', [AuthenticatedSessionController::class, 'store'])
 Route::get('/matakuliah', [MataKuliahController::class, 'index'])
                 ->middleware('auth')
                 ->name('matakuliah.index');
+
+Route::get('/asesmen/{mata_kuliah_uuid}', [AsesmenController::class, 'index'])
+                ->middleware('auth')
+                ->name('asesmen.index');
+
+Route::get('/kompetensi/{asesmen_uuid}', [KompetensiController::class, 'index'])
+                ->middleware('auth')
+                ->name('kompetensi.index');
 
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth:sanctum')
