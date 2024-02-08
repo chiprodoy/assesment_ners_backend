@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nama_kompetensi'); // kognitif,psikomotrik,afektif,social
             $table->decimal('persentase');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

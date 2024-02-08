@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "0d4c25f5-47ca-456c-aaba-0697b096cf58",
+        "_postman_id": "30b045b7-cfa4-4c28-924c-0f491a02fa35",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"jkar\",\"nidn_npm\":\"et\",\"email\":\"mhills@example.net\",\"telepon\":\"ryqypepqdbbb\",\"password\":\"ut\"}"
+                            "raw": "{\"name\":\"zdwsppqzuhae\",\"nidn_npm\":\"repudiandae\",\"email\":\"gibson.isai@example.com\",\"telepon\":\"ygilxjoxxrcg\",\"password\":\"et\"}"
                         },
                         "description": "Handle an incoming registration request.",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"fkonopelski@example.org\",\"password\":\"S(*:v~z#\"}"
+                            "raw": "{\"email\":\"summer04@example.net\",\"password\":\"HH,B*&DfykYdN\"}"
                         },
                         "description": "Handle an incoming authentication request.",
                         "auth": {
@@ -138,7 +138,7 @@
                                 {
                                     "id": "mata_kuliah_uuid",
                                     "key": "mata_kuliah_uuid",
-                                    "value": "d44baa2a-055a-35c9-8a3c-edfd8c1cb191",
+                                    "value": "7db6c361-dc78-3c94-98fa-d3d2c8c23d4f",
                                     "description": ""
                                 }
                             ]
@@ -156,6 +156,59 @@
                         ],
                         "body": null,
                         "description": "Get Asesmen data"
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Kompetensi",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/kompetensi\/:asesmen_uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/kompetensi\/:asesmen_uuid",
+                            "variable": [
+                                {
+                                    "id": "asesmen_uuid",
+                                    "key": "asesmen_uuid",
+                                    "value": "570932f7-5f38-39e4-a05e-74df9bfa947b",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Get Kompetensi data"
                     },
                     "response": [
                         {

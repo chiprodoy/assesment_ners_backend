@@ -26,23 +26,23 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: jkar
+                  example: zdwsppqzuhae
                 nidn_npm:
                   type: string
                   description: ''
-                  example: et
+                  example: repudiandae
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: mhills@example.net
+                  example: gibson.isai@example.com
                 telepon:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 13 characters.'
-                  example: ryqypepqdbbb
+                  example: ygilxjoxxrcg
                 password:
                   type: string
                   description: ''
-                  example: ut
+                  example: et
               required:
                 - name
                 - nidn_npm
@@ -69,11 +69,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: fkonopelski@example.org
+                  example: summer04@example.net
                 password:
                   type: string
                   description: ''
-                  example: 'S(*:v~z#'
+                  example: 'HH,B*&DfykYdN'
               required:
                 - email
                 - password
@@ -125,7 +125,37 @@ paths:
         in: path
         name: mata_kuliah_uuid
         description: ''
-        example: d44baa2a-055a-35c9-8a3c-edfd8c1cb191
+        example: 7db6c361-dc78-3c94-98fa-d3d2c8c23d4f
+        required: true
+        schema:
+          type: string
+  '/api/kompetensi/{asesmen_uuid}':
+    get:
+      summary: Kompetensi
+      operationId: kompetensi
+      description: 'Get Kompetensi data'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: asesmen_uuid
+        description: ''
+        example: 570932f7-5f38-39e4-a05e-74df9bfa947b
         required: true
         schema:
           type: string
