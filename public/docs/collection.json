@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost:8000"
+            "value": "https:\/\/epk.anantatechnology.com"
         }
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "cdc44aec-3815-415e-bcc9-a0cc6b72fca8",
+        "_postman_id": "ceb00b3a-1369-4c21-b887-b661abdf63b7",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -19,37 +19,6 @@
             "name": "Endpoints",
             "description": "",
             "item": [
-                {
-                    "name": "Login",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/login",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/login"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"email\":\"cjacobs@example.org\",\"password\":\"e#4Rcx_L6\"}"
-                        },
-                        "description": "Handle an incoming authentication request.",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
                 {
                     "name": "Register",
                     "request": {
@@ -72,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ajhadl\",\"nidn_npm\":\"alias\",\"email\":\"trisha.satterfield@example.org\",\"telepon\":\"eikemg\",\"password\":\"magni\"}"
+                            "raw": "{\"name\":\"bedlurltkxqrsbvjyj\",\"nidn_npm\":\"sit\",\"email\":\"gisselle77@example.net\",\"telepon\":\"wgkmaahen\",\"password\":\"impedit\"}"
                         },
                         "description": "Handle an incoming registration request.",
                         "auth": {
@@ -80,6 +49,85 @@
                         }
                     },
                     "response": []
+                },
+                {
+                    "name": "Login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"neoma72@example.net\",\"password\":\"x'%8\\\/d^R5T!esK#;)Dr[\"}"
+                        },
+                        "description": "Handle an incoming authentication request.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Mata Kuliah",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/matakuliah",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/matakuliah"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Get Mata Kuliah data",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
                     "name": "Logout",

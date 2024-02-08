@@ -5,36 +5,8 @@ info:
   version: 1.0.0
 servers:
   -
-    url: 'http://localhost:8000'
+    url: 'https://epk.anantatechnology.com'
 paths:
-  /api/login:
-    post:
-      summary: Login
-      operationId: login
-      description: 'Handle an incoming authentication request.'
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  description: 'Must be a valid email address.'
-                  example: cjacobs@example.org
-                password:
-                  type: string
-                  description: ''
-                  example: 'e#4Rcx_L6'
-              required:
-                - email
-                - password
-      security: []
   /api/register:
     post:
       summary: Register
@@ -54,29 +26,79 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ajhadl
+                  example: bedlurltkxqrsbvjyj
                 nidn_npm:
                   type: string
                   description: ''
-                  example: alias
+                  example: sit
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: trisha.satterfield@example.org
+                  example: gisselle77@example.net
                 telepon:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 13 characters.'
-                  example: eikemg
+                  example: wgkmaahen
                 password:
                   type: string
                   description: ''
-                  example: magni
+                  example: impedit
               required:
                 - name
                 - nidn_npm
                 - email
                 - telepon
                 - password
+      security: []
+  /api/login:
+    post:
+      summary: Login
+      operationId: login
+      description: 'Handle an incoming authentication request.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: neoma72@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: "x'%8/d^R5T!esK#;)Dr["
+              required:
+                - email
+                - password
+      security: []
+  /api/matakuliah:
+    get:
+      summary: 'Mata Kuliah'
+      operationId: mataKuliah
+      description: 'Get Mata Kuliah data'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
       security: []
   /api/logout:
     get:
