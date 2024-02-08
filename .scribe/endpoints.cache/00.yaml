@@ -28,7 +28,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: zdwsppqzuhae
+        example: lidxz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,7 +37,7 @@ endpoints:
         name: nidn_npm
         description: ''
         required: true
-        example: repudiandae
+        example: at
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -46,7 +46,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: gibson.isai@example.com
+        example: hkreiger@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -55,7 +55,7 @@ endpoints:
         name: telepon
         description: 'Must be at least 10 characters. Must not be greater than 13 characters.'
         required: true
-        example: ygilxjoxxrcg
+        example: jizdpqgu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -64,17 +64,17 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: et
+        example: id
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: zdwsppqzuhae
-      nidn_npm: repudiandae
-      email: gibson.isai@example.com
-      telepon: ygilxjoxxrcg
-      password: et
+      name: lidxz
+      nidn_npm: at
+      email: hkreiger@example.net
+      telepon: jizdpqgu
+      password: id
     fileParameters: []
     responses: []
     responseFields: []
@@ -108,7 +108,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: summer04@example.net
+        example: kub.aleen@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -117,14 +117,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'HH,B*&DfykYdN'
+        example: '07Nw*9~Y@'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: summer04@example.net
-      password: 'HH,B*&DfykYdN'
+      email: kub.aleen@example.org
+      password: '07Nw*9~Y@'
     fileParameters: []
     responses: []
     responseFields: []
@@ -193,13 +193,13 @@ endpoints:
         name: mata_kuliah_uuid
         description: ''
         required: true
-        example: 7db6c361-dc78-3c94-98fa-d3d2c8c23d4f
+        example: 3560d681-57ea-32c5-b9c0-f2f9fce1a789
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      mata_kuliah_uuid: 7db6c361-dc78-3c94-98fa-d3d2c8c23d4f
+      mata_kuliah_uuid: 3560d681-57ea-32c5-b9c0-f2f9fce1a789
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -242,13 +242,62 @@ endpoints:
         name: asesmen_uuid
         description: ''
         required: true
-        example: 570932f7-5f38-39e4-a05e-74df9bfa947b
+        example: 39e8dded-37fa-370d-9c96-678615918a7b
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      asesmen_uuid: 570932f7-5f38-39e4-a05e-74df9bfa947b
+      asesmen_uuid: 39e8dded-37fa-370d-9c96-678615918a7b
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/subkompetensi/{kompetensi_uuid}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Kompetensi
+      description: 'Get Kompetensi data'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      kompetensi_uuid:
+        name: kompetensi_uuid
+        description: ''
+        required: true
+        example: 4e86f2ee-3dcc-3bff-880e-f66b27099c9d
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      kompetensi_uuid: 4e86f2ee-3dcc-3bff-880e-f66b27099c9d
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

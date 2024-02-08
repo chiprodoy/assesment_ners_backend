@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nama_sub_kompetensi');
             $table->string('skor_penilaian')->default('0,1,2,3,4'); //0,1,2,3,4 //1-10
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
