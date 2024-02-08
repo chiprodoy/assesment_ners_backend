@@ -4,56 +4,6 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/login
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: Login
-      description: 'Handle an incoming authentication request.'
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: wolf.jenifer@example.net
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password:
-        name: password
-        description: ''
-        required: true
-        example: 'b[yOD/kYd'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      email: wolf.jenifer@example.net
-      password: 'b[yOD/kYd'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
     uri: api/register
     metadata:
       groupName: Endpoints
@@ -76,7 +26,16 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: vlcucvdztxooavwtjgc
+        example: czbty
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      nidn_npm:
+        name: nidn_npm
+        description: ''
+        required: true
+        example: consectetur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -85,7 +44,16 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: toy.rickey@example.net
+        example: wharber@example.org
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      telepon:
+        name: telepon
+        description: 'Must be at least 10 characters. Must not be greater than 13 characters.'
+        required: true
+        example: hcomxfjek
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -94,17 +62,108 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: eveniet
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: vlcucvdztxooavwtjgc
-      email: toy.rickey@example.net
-      password: eveniet
+      name: czbty
+      nidn_npm: consectetur
+      email: wharber@example.org
+      telepon: hcomxfjek
+      password: voluptas
     fileParameters: []
     responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/login
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Login
+      description: 'Handle an incoming authentication request.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: fredy.schaden@example.org
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: 'AGjF7>0K]/A/MvcSk'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      email: fredy.schaden@example.org
+      password: 'AGjF7>0K]/A/MvcSk'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/matakuliah
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mata Kuliah'
+      description: 'Get Mata Kuliah data'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null

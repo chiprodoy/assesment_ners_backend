@@ -24,6 +24,7 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
+            'uuid'=>'-',
             'name' => fake()->name(),
             'nidn_npm'=>fake()->randomNumber(),
             'telepon'=>fake()->phoneNumber(),
