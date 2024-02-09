@@ -12,9 +12,9 @@ class SubKompetensiController extends MainController
     public $model = SubKompetensi::class;
 
      /**
-     * Kompetensi
+     * Sub Kompetensi
      *
-     * Get Kompetensi data
+     * Get Sub Kompetensi data
      * @authenticated
      */
     public function index($kompetensi_uuid){

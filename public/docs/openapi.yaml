@@ -26,23 +26,23 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: lidxz
+                  example: wrpdhqd
                 nidn_npm:
                   type: string
                   description: ''
-                  example: at
+                  example: quod
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: hkreiger@example.net
+                  example: wilson.dubuque@example.com
                 telepon:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 13 characters.'
-                  example: jizdpqgu
+                  example: exdyle
                 password:
                   type: string
                   description: ''
-                  example: id
+                  example: ut
               required:
                 - name
                 - nidn_npm
@@ -69,11 +69,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: kub.aleen@example.org
+                  example: meda.rath@example.com
                 password:
                   type: string
                   description: ''
-                  example: '07Nw*9~Y@'
+                  example: 'X*4lTdQ6e>Tyh'
               required:
                 - email
                 - password
@@ -125,7 +125,7 @@ paths:
         in: path
         name: mata_kuliah_uuid
         description: ''
-        example: 3560d681-57ea-32c5-b9c0-f2f9fce1a789
+        example: 698b7e43-ce94-3f19-a145-1257113420e4
         required: true
         schema:
           type: string
@@ -155,15 +155,15 @@ paths:
         in: path
         name: asesmen_uuid
         description: ''
-        example: 39e8dded-37fa-370d-9c96-678615918a7b
+        example: 6bb3c133-7595-3976-9fe7-a11389164c22
         required: true
         schema:
           type: string
   '/api/subkompetensi/{kompetensi_uuid}':
     get:
-      summary: Kompetensi
-      operationId: kompetensi
-      description: 'Get Kompetensi data'
+      summary: 'Sub Kompetensi'
+      operationId: subKompetensi
+      description: 'Get Sub Kompetensi data'
       parameters: []
       responses:
         401:
@@ -185,7 +185,7 @@ paths:
         in: path
         name: kompetensi_uuid
         description: ''
-        example: 4e86f2ee-3dcc-3bff-880e-f66b27099c9d
+        example: 3d8043de-f9e3-38a6-b498-0a915bd15ad5
         required: true
         schema:
           type: string

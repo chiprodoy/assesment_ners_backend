@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "4717be18-0d3d-4587-a13f-a2b518d1712e",
+        "_postman_id": "2bc10a01-e816-44e5-86d5-569ecfdedfb2",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"lidxz\",\"nidn_npm\":\"at\",\"email\":\"hkreiger@example.net\",\"telepon\":\"jizdpqgu\",\"password\":\"id\"}"
+                            "raw": "{\"name\":\"wrpdhqd\",\"nidn_npm\":\"quod\",\"email\":\"wilson.dubuque@example.com\",\"telepon\":\"exdyle\",\"password\":\"ut\"}"
                         },
                         "description": "Handle an incoming registration request.",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"kub.aleen@example.org\",\"password\":\"07Nw*9~Y@\"}"
+                            "raw": "{\"email\":\"meda.rath@example.com\",\"password\":\"X*4lTdQ6e>Tyh\"}"
                         },
                         "description": "Handle an incoming authentication request.",
                         "auth": {
@@ -138,7 +138,7 @@
                                 {
                                     "id": "mata_kuliah_uuid",
                                     "key": "mata_kuliah_uuid",
-                                    "value": "3560d681-57ea-32c5-b9c0-f2f9fce1a789",
+                                    "value": "698b7e43-ce94-3f19-a145-1257113420e4",
                                     "description": ""
                                 }
                             ]
@@ -191,7 +191,7 @@
                                 {
                                     "id": "asesmen_uuid",
                                     "key": "asesmen_uuid",
-                                    "value": "39e8dded-37fa-370d-9c96-678615918a7b",
+                                    "value": "6bb3c133-7595-3976-9fe7-a11389164c22",
                                     "description": ""
                                 }
                             ]
@@ -233,7 +233,7 @@
                     ]
                 },
                 {
-                    "name": "Kompetensi",
+                    "name": "Sub Kompetensi",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -244,7 +244,7 @@
                                 {
                                     "id": "kompetensi_uuid",
                                     "key": "kompetensi_uuid",
-                                    "value": "4e86f2ee-3dcc-3bff-880e-f66b27099c9d",
+                                    "value": "3d8043de-f9e3-38a6-b498-0a915bd15ad5",
                                     "description": ""
                                 }
                             ]
@@ -261,7 +261,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "Get Kompetensi data"
+                        "description": "Get Sub Kompetensi data"
                     },
                     "response": [
                         {
