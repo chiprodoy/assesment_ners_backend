@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\KompetensiController;
 use App\Http\Controllers\MataKuliahController;
+use App\Http\Controllers\SubKompetensiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,10 @@ Route::get('/asesmen/{mata_kuliah_uuid}', [AsesmenController::class, 'index'])
 Route::get('/kompetensi/{asesmen_uuid}', [KompetensiController::class, 'index'])
                 ->middleware('auth')
                 ->name('kompetensi.index');
+
+Route::get('/subkompetensi/{kompetensi_uuid}', [SubKompetensiController::class, 'index'])
+                ->middleware('auth')
+                ->name('subkompetensi.index');
 
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth:sanctum')
