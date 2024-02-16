@@ -28,7 +28,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: lidxz
+        example: wrpdhqd
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,7 +37,7 @@ endpoints:
         name: nidn_npm
         description: ''
         required: true
-        example: at
+        example: quod
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -46,7 +46,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: hkreiger@example.net
+        example: wilson.dubuque@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -55,7 +55,7 @@ endpoints:
         name: telepon
         description: 'Must be at least 10 characters. Must not be greater than 13 characters.'
         required: true
-        example: jizdpqgu
+        example: exdyle
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -64,17 +64,17 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: id
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: lidxz
-      nidn_npm: at
-      email: hkreiger@example.net
-      telepon: jizdpqgu
-      password: id
+      name: wrpdhqd
+      nidn_npm: quod
+      email: wilson.dubuque@example.com
+      telepon: exdyle
+      password: ut
     fileParameters: []
     responses: []
     responseFields: []
@@ -108,7 +108,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: kub.aleen@example.org
+        example: meda.rath@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -117,14 +117,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: '07Nw*9~Y@'
+        example: 'X*4lTdQ6e>Tyh'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: kub.aleen@example.org
-      password: '07Nw*9~Y@'
+      email: meda.rath@example.com
+      password: 'X*4lTdQ6e>Tyh'
     fileParameters: []
     responses: []
     responseFields: []
@@ -193,13 +193,13 @@ endpoints:
         name: mata_kuliah_uuid
         description: ''
         required: true
-        example: 3560d681-57ea-32c5-b9c0-f2f9fce1a789
+        example: 698b7e43-ce94-3f19-a145-1257113420e4
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      mata_kuliah_uuid: 3560d681-57ea-32c5-b9c0-f2f9fce1a789
+      mata_kuliah_uuid: 698b7e43-ce94-3f19-a145-1257113420e4
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -242,13 +242,13 @@ endpoints:
         name: asesmen_uuid
         description: ''
         required: true
-        example: 39e8dded-37fa-370d-9c96-678615918a7b
+        example: 6bb3c133-7595-3976-9fe7-a11389164c22
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      asesmen_uuid: 39e8dded-37fa-370d-9c96-678615918a7b
+      asesmen_uuid: 6bb3c133-7595-3976-9fe7-a11389164c22
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -279,8 +279,8 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: Kompetensi
-      description: 'Get Kompetensi data'
+      title: 'Sub Kompetensi'
+      description: 'Get Sub Kompetensi data'
       authenticated: true
       custom: []
     headers:
@@ -291,13 +291,13 @@ endpoints:
         name: kompetensi_uuid
         description: ''
         required: true
-        example: 4e86f2ee-3dcc-3bff-880e-f66b27099c9d
+        example: 3d8043de-f9e3-38a6-b498-0a915bd15ad5
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      kompetensi_uuid: 4e86f2ee-3dcc-3bff-880e-f66b27099c9d
+      kompetensi_uuid: 3d8043de-f9e3-38a6-b498-0a915bd15ad5
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

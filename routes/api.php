@@ -22,28 +22,29 @@ use App\Http\Controllers\SubKompetensiController;
 |
 */
 
+/*
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest')
                 ->name('register');
-
+*/
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->middleware('guest')
                 ->name('login');
 
 Route::get('/matakuliah', [MataKuliahController::class, 'index'])
-                ->middleware('auth')
+                ->middleware('auth:sanctum')
                 ->name('matakuliah.index');
 
 Route::get('/asesmen/{mata_kuliah_uuid}', [AsesmenController::class, 'index'])
-                ->middleware('auth')
+                ->middleware('auth:sanctum')
                 ->name('asesmen.index');
 
 Route::get('/kompetensi/{asesmen_uuid}', [KompetensiController::class, 'index'])
-                ->middleware('auth')
+                ->middleware('auth:sanctum')
                 ->name('kompetensi.index');
 
 Route::get('/subkompetensi/{kompetensi_uuid}', [SubKompetensiController::class, 'index'])
-                ->middleware('auth')
+                ->middleware('auth:sanctum')
                 ->name('subkompetensi.index');
 
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])
