@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\KompetensiController;
+use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\SubKompetensiController;
 
@@ -34,6 +35,10 @@ Route::post('/login', [AuthenticatedSessionController::class, 'store'])
 Route::get('/matakuliah', [MataKuliahController::class, 'index'])
                 ->middleware('auth:sanctum')
                 ->name('matakuliah.index');
+
+Route::get('/mahasiswa', [MahasiswaController::class, 'index'])
+                ->middleware('auth:sanctum')
+                ->name('mahasiswa.index');
 
 Route::get('/asesmen/{mata_kuliah_uuid}', [AsesmenController::class, 'index'])
                 ->middleware('auth:sanctum')
