@@ -28,12 +28,8 @@ class MainController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    private function saveRecord($data){
+        $rec = $this->model::create($data);
     }
 
     /**
