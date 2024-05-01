@@ -27,7 +27,6 @@ class NilaiSubKompetensiRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'sub_kompetensi_id' => ['required', 'integer'],
             'mahasiswa_id' => ['required', 'integer'],
             'nilai' => ['required', 'integer'],
         ];

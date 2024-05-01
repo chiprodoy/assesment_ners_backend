@@ -11,14 +11,14 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
-class NilaiSubKompetenstiTest extends TestCase
+class NilaiSubKompetensiTest extends TestCase
 {
     /**
      * A basic feature test example.
      */
     public function test_user_can_post_nilai_sub_kompetensi_api(): void
     {
-        $user = User::find(1);
+        $user = User::find(2);
 
         Sanctum::actingAs($user);
 
@@ -26,17 +26,18 @@ class NilaiSubKompetenstiTest extends TestCase
 
         $mahasiswa=Mahasiswa::find(1);
 
-        $response = $this->postJson('/api/nilai_subkompetensi/'.$subKompetensi->uuid);
+        $response = $this->postJson('/api/nilai_subkompetensi/'.$subKompetensi->uuid,['mahasiswa_id'=>$mahasiswa->id,'nilai'=>4]);
+
         $response->assertStatus(200);
 
         $response->assertJsonStructure([
             'data'=>[
                 '*'=>[
                     'id',
-                    'uuid',
-                    'nama_sub_kompetensi',
-                    'skor_penilaian',
-                    'kompetensi'=>['uuid','nama_kompetensi']
+                    'sub_kompetensi_id',
+                    'mahasiswa_id',
+                    'dosen_id',
+                    'nilai',
                 ]
             ]
         ]
