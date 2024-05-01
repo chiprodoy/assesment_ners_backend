@@ -28,12 +28,9 @@ class MainController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function saveRecord($data){
+        $rec = $this->model::create($data);
+        return $rec;
     }
 
     /**
@@ -68,7 +65,11 @@ class MainController extends Controller
         //
     }
 
-    public function output(){
-
+    public function errorResponse($errorCode,$errorMsg){
+        return response([
+            'status' => 'Error',
+            'code' => $errorCode,
+            'message' => $errorMsg
+        ],$errorCode);
     }
 }

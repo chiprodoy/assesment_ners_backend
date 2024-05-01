@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\KompetensiController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliahController;
+use App\Http\Controllers\NilaiSubKompetensiController;
 use App\Http\Controllers\SubKompetensiController;
 
 /*
@@ -51,6 +52,10 @@ Route::get('/kompetensi/{asesmen_uuid}', [KompetensiController::class, 'index'])
 Route::get('/subkompetensi/{kompetensi_uuid}', [SubKompetensiController::class, 'index'])
                 ->middleware('auth:sanctum')
                 ->name('subkompetensi.index');
+
+Route::post('/nilai_subkompetensi/{subkompetensi_uuid}', [NilaiSubKompetensiController::class, 'store'])
+                ->middleware('auth:sanctum')
+                ->name('nilai_subkompetensi.index');
 
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth:sanctum')
