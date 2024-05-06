@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AsesmenController;
+use App\Http\Controllers\AssesmenReportController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
@@ -61,7 +62,9 @@ Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth:sanctum')
                 ->name('logout');
 
-
+Route::get('/asesmen_report/{mahasiswa_uuid}', [AssesmenReportController::class, 'show'])
+               // ->middleware('auth:sanctum')
+                ->name('asesmen_report.show');
 /**
  *
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
