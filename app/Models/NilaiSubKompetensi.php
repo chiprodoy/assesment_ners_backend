@@ -20,4 +20,14 @@ class NilaiSubKompetensi extends Model
         'dosen_id',
         'nilai',
     ];
+
+        /**
+     * Get the comments for the blog post.
+     */
+    public function sub_kompetensi()
+    {
+        return $this->belongsTo(SubKompetensi::class);
+    }
+
+
 }
