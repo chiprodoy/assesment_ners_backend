@@ -29,8 +29,15 @@ class NilaiSubKompetensiController extends MainController
     public function saveRecord($data)
     {
         $rec = $this->model::updateOrInsert(
-            ['sub_kompetensi_id' => $data['sub_kompetensi_id'], 'mahasiswa_id' => $data['mahasiswa_id'],'dosen_id'=>$data['dosen_id']],
-            ['nilai' => $data['nilai']]
+            ['sub_kompetensi_id' => $data['sub_kompetensi_id'],
+            'mahasiswa_id' => $data['mahasiswa_id'],
+            'dosen_id'=>$data['dosen_id']
+            ],
+            [
+                'nilai' => $data['nilai'],
+                'pembimbing_akademik'=>$data['pembimbing_akademik'],
+                'pembimbing_lapangan'=>$data['pembimbing_lapangan'],
+            ]
         );
 
         return $rec;

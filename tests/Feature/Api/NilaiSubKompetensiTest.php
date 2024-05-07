@@ -26,7 +26,8 @@ class NilaiSubKompetensiTest extends TestCase
 
         $mahasiswa=Mahasiswa::find(1);
 
-        $response = $this->postJson('/api/nilai_subkompetensi/'.$subKompetensi->uuid,['mahasiswa_id'=>$mahasiswa->id,'nilai'=>4]);
+        $response = $this->postJson('/api/nilai_subkompetensi/'.$subKompetensi->uuid,['mahasiswa_id'=>$mahasiswa->id,'nilai'=>4,
+        'pembimbing_akademik'=>'Dr. Nolan','pembimbing_lapangan'=>'Mr. Smith']);
 
         $response->assertStatus(200);
 

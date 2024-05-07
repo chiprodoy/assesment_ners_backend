@@ -20,6 +20,8 @@ return new class extends Migration
             $table->foreignIdFor(Mahasiswa::class);
             $table->foreignIdFor(Dosen::class);
             $table->decimal('nilai');
+            $table->string('pembimbing_akademik');
+            $table->string('pembimbing_lapangan');
             $table->timestamps();
         });
     }
