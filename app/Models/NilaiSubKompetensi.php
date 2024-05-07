@@ -19,6 +19,9 @@ class NilaiSubKompetensi extends Model
         'mahasiswa_id',
         'dosen_id',
         'nilai',
+        'pembimbing_akademik',
+        'pembimbing_lapangan',
+
     ];
 
         /**
