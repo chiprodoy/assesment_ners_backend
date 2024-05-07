@@ -29,6 +29,9 @@ class NilaiSubKompetensiRequest extends FormRequest
         return [
             'mahasiswa_id' => ['required', 'integer'],
             'nilai' => ['required', 'integer'],
+            'pembimbing_akademik' => ['required'],
+            'pembimbing_lapangan' => ['required'],
+
         ];
     }
 
