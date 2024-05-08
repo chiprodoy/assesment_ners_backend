@@ -31,7 +31,6 @@ class NilaiSubKompetensiRequest extends FormRequest
             'nilai' => ['required', 'integer'],
             'pembimbing_akademik' => ['required'],
             'pembimbing_lapangan' => ['required'],
-
         ];
     }
 
