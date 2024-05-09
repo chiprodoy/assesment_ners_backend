@@ -1,3 +1,10 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Laporan Asesmen</title>
+  </head>
+  <body>
+
 <h1>ASESMEN LAPORAN PENDAHULUAN TINJAUAN KASUS</h1>
 NIM : {{$mahasiswa->npm}}<br/>
 Nama : {{$mahasiswa->nama}}<br/>
@@ -47,3 +54,5 @@ Nama : {{$mahasiswa->nama}}<br/>
         @endphp</td>
     </tr>
 </table>
+</body>
+</html>
