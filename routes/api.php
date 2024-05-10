@@ -42,6 +42,14 @@ Route::get('/mahasiswa', [MahasiswaController::class, 'index'])
                 ->middleware('auth:sanctum')
                 ->name('mahasiswa.index');
 
+Route::post('/mahasiswa/{uuid}', [MahasiswaController::class, 'store'])
+                ->middleware('auth:sanctum')
+                ->name('mahasiswa.store');
+
+Route::delete('/mahasiswa/{uuid}', [MahasiswaController::class, 'destroy'])
+                ->middleware('auth:sanctum')
+                ->name('mahasiswa.destroy');
+
 Route::get('/asesmen/{mata_kuliah_uuid}', [AsesmenController::class, 'index'])
                 ->middleware('auth:sanctum')
                 ->name('asesmen.index');
