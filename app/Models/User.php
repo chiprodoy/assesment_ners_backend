@@ -60,4 +60,12 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class);
     }
+
+        /**
+     * Get the comments for the blog post.
+     */
+    public function mahasiswa()
+    {
+        return $this->hasOne(Mahasiswa::class);
+    }
 }
