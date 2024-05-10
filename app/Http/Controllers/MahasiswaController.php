@@ -42,8 +42,8 @@ class MahasiswaController extends MainController
         $validatedMhs['user_id']=$userSave->id;
         $validatedMhs['uuid']='-';
 
-        $dataSave=$this->saveRecord($validatedMhs);
-
+        $this->saveRecord($validatedMhs);
+        $dataSave=Mahasiswa::where('user_id',$userSave->id)->first();
 
         if($dataSave && $userSave){
             return MahasiswaResource::collection($dataSave);
