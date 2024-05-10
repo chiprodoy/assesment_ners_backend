@@ -30,9 +30,12 @@ class MahasiswaController extends MainController
         $validatedMhs = $request->safe()->except(['telepon', 'email']);
         $validateUser = $request->safe()->only(['telepon', 'email']);
 
+        $validateUser['uuid']='-';
+
         $userSave=User::create($validateUser);
 
         $validatedMhs['user_id']=$userSave->id;
+        $validatedMhs['uuid']='-';
 
         $dataSave=$this->saveRecord($validatedMhs);
 
