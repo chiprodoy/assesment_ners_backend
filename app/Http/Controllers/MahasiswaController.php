@@ -32,7 +32,7 @@ class MahasiswaController extends MainController
 
         $validateUser['uuid']='-';
         $validateUser['name']=$validatedMhs['nama'];
-
+        $validateUser['nidn_npm']=$validatedMhs['npm'];
         $userSave=User::create($validateUser);
 
         $validatedMhs['user_id']=$userSave->id;
