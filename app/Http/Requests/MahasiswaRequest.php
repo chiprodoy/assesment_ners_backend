@@ -23,9 +23,9 @@ class MahasiswaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'npm' => ['required', 'integer'],
-            'nama' => ['required', 'integer'],
-            'email' => ['required'],
+            'npm' => ['required', 'string'],
+            'nama' => ['required', 'string'],
+            'email' => ['required','email'],
             'telepon' => ['required'],
         ];
     }
