@@ -33,6 +33,11 @@ class MainController extends Controller
         return $rec;
     }
 
+    public function updateRecord($data){
+        $rec = $this->model::update($data);
+        return $rec;
+    }
+
     /**
      * Display the specified resource.
      */
@@ -49,13 +54,6 @@ class MainController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
