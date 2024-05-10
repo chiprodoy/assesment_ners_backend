@@ -11,6 +11,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
+use function Laravel\Prompts\password;
+
 class MahasiswaController extends MainController
 {
     public $model = Mahasiswa::class;
@@ -33,6 +35,8 @@ class MahasiswaController extends MainController
         $validateUser['uuid']='-';
         $validateUser['name']=$validatedMhs['nama'];
         $validateUser['nidn_npm']=$validatedMhs['npm'];
+        $validateUser['password']='password';
+
         $userSave=User::create($validateUser);
 
         $validatedMhs['user_id']=$userSave->id;
