@@ -42,7 +42,7 @@ Route::get('/mahasiswa', [MahasiswaController::class, 'index'])
                 ->middleware('auth:sanctum')
                 ->name('mahasiswa.index');
 
-Route::post('/mahasiswa/{uuid}', [MahasiswaController::class, 'store'])
+Route::post('/mahasiswa', [MahasiswaController::class, 'store'])
                 ->middleware('auth:sanctum')
                 ->name('mahasiswa.store');
 
