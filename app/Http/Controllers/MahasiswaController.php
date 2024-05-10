@@ -38,15 +38,15 @@ class MahasiswaController extends MainController
         $validateUser['password']='password';
 
         $userSave=User::create($validateUser);
+        $user = User::where('email',$validateUser['email'])->first();
 
-        $validatedMhs['user_id']=$userSave->id;
         $validatedMhs['uuid']='-';
 
-        $this->saveRecord($validatedMhs);
-        $dataSave=Mahasiswa::where('user_id',$userSave->id)->first();
+        $dataSave=$user->mahasiswa()->create($validatedMhs);
+        $mhs = Mahasiswa::where('npm',$validatedMhs['npm'])->get();
 
         if($dataSave && $userSave){
-            return MahasiswaResource::collection($dataSave);
+            return MahasiswaResource::collection($mhs);
         }
     }
 
