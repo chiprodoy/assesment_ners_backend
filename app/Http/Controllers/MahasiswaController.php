@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Auth\MahasiswaRequest;
+use App\Http\Requests\MahasiswaRequest;
 use App\Http\Resources\MahasiswaResource;
 use App\Http\Resources\MataKuliahResource;
 use App\Models\Mahasiswa;
