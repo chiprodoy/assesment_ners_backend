@@ -33,6 +33,8 @@ class DosenController extends MainController
 
         $userSave=User::create($validateUser);
         $user = User::where('email',$validateUser['email'])->first();
+        //create role dosen;
+        $user->roles()->attach(2);
 
         $dataSave=$user->dosen()->create($validatedDosen);
         $dosen = Dosen::where('nidn',$validatedDosen['nidn'])->get();

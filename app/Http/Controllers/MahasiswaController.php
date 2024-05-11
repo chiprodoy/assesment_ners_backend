@@ -39,6 +39,8 @@ class MahasiswaController extends MainController
 
         $userSave=User::create($validateUser);
         $user = User::where('email',$validateUser['email'])->first();
+        // attach role mahasiswa
+        $user->roles()->attach(1);
 
         $validatedMhs['uuid']='-';
 
