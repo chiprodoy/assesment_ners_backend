@@ -71,7 +71,7 @@ Nama : {{$mahasiswa->nama}}<br/>
         @if ($item->sub_kompetensi->id!=$nilaiSubKompetensi[$loop->index+1]->sub_kompetensi->id)
         <tr>
             <td></td>
-            <td>Total Skor{{$item->sub_kompetensi->id}} - {{$nilaiSubKompetensi[$loop->index+1]->sub_kompetensi->id}}</td>
+            <td>Total Skor{{$item->sub_kompetensi->kompetensi->id}} - {{$nilaiSubKompetensi[$loop->index+1]->sub_kompetensi->kompetensi->id}}</td>
             <td>{{$subtotal}}</td>
         </tr>
         <tr>
