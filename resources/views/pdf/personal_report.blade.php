@@ -33,43 +33,7 @@ Nama : {{$mahasiswa->nama}}<br/>
     </tr>
     @endif
 
-    <tr>
-        <td>{{ $loop->iteration}}</td>
-        <td>{{ $item->sub_kompetensi->nama_sub_kompetensi }}</td>
-        <td>{{$item->nilai}}</td>
-    </tr>
-    @php
-        $jumlahAspek=$jumlahAspek+1;
-        $subtotal=$subtotal+$item->nilai;
-    @endphp
 
-    @if ($loop->iteration ==$loop->count || $item->sub_kompetensi->id!=$nilaiSubKompetensi[$loop->index+1]->sub_kompetensi->id)
-
-    <tr>
-        <td></td>
-        <td>Total Skor</td>
-        <td>{{$subtotal}}</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>Nilai  (total skor /{{$jumlahAspek}}*100)</td>
-        @php
-            $subNilai = $subtotal/$jumlahAspek*100;
-            $subNilais[]=$subNilai;
-            $jumlahAspek = 0;
-        @endphp
-        <td>{{$subNilai}}</td>
-    </tr>
-    @php
-        $subPoin = $subNilai/$item->sub_kompetensi->kompetensi->persentase;
-        $subPoins[]=$subPoin;
-    @endphp
-    <tr>
-        <td></td>
-        <td>Poin </td>
-        <td>{{$subPoin}}</td>
-    </tr>
-    @endif
 
     @endforeach
 
