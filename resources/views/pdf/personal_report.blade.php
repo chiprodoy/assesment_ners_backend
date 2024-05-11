@@ -43,12 +43,12 @@ Nama : {{$mahasiswa->nama}}<br/>
         $subtotal=$subtotal+$item->nilai;
     @endphp
         @if ($loop->remaining == 0)
-        <tr>
+        <tr align="right">
             <td></td>
             <td>Total Skor</td>
             <td>{{$subtotal}}</td>
         </tr>
-        <tr>
+        <tr align="right">
             <td></td>
             <td>Nilai  (total skor /{{$jumlahAspek}}*100)</td>
             @php
@@ -62,19 +62,19 @@ Nama : {{$mahasiswa->nama}}<br/>
             $subPoin = $subNilai/$item->sub_kompetensi->kompetensi->persentase;
             $subPoins[]=$subPoin;
         @endphp
-        <tr>
+        <tr align="right">
             <td></td>
             <td>Poin </td>
             <td>{{$subPoin}}</td>
         </tr>
         @else
         @if ($item->sub_kompetensi->kompetensi->id!=$nilaiSubKompetensi[$loop->index+1]->sub_kompetensi->kompetensi->id)
-        <tr>
+        <tr align="right">
             <td></td>
             <td>Total Skor{{$item->sub_kompetensi->kompetensi->id}} - {{$nilaiSubKompetensi[$loop->index+1]->sub_kompetensi->kompetensi->id}}</td>
             <td>{{$subtotal}}</td>
         </tr>
-        <tr>
+        <tr align="right">
             <td></td>
             <td>Nilai  (total skor /{{$jumlahAspek}}*100)</td>
             @php
@@ -88,7 +88,7 @@ Nama : {{$mahasiswa->nama}}<br/>
             $subPoin = $subNilai/$item->sub_kompetensi->kompetensi->persentase;
             $subPoins[]=$subPoin;
         @endphp
-        <tr>
+        <tr align="right">
             <td></td>
             <td>Poin </td>
             <td>{{$subPoin}}</td>
