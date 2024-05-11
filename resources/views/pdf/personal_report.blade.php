@@ -26,7 +26,7 @@ Nama : {{$mahasiswa->nama}}<br/>
 
     </tr>
     @endif
-    @if ($loop->index > 0 && $item->sub_kompetensi->id!=$nilaiSubKompetensi[$loop->iteration-1]->sub_kompetensi->id)
+    @if ($loop->index > 0 && $item->sub_kompetensi->kompetensi->id!=$nilaiSubKompetensi[$loop->iteration-1]->sub_kompetensi->kompetensi->id)
     <tr>
         <td colspan="3">{{ ucwords($item->sub_kompetensi->kompetensi->nama_kompetensi) }} - ({{$item->sub_kompetensi->kompetensi->persentase*100}}%)</td>
 
@@ -71,7 +71,7 @@ Nama : {{$mahasiswa->nama}}<br/>
         @if ($item->sub_kompetensi->kompetensi->id!=$nilaiSubKompetensi[$loop->index+1]->sub_kompetensi->kompetensi->id)
         <tr align="right">
             <td></td>
-            <td>Total Skor{{$item->sub_kompetensi->kompetensi->id}} - {{$nilaiSubKompetensi[$loop->index+1]->sub_kompetensi->kompetensi->id}}</td>
+            <td>Total Skor</td>
             <td>{{$subtotal}}</td>
         </tr>
         <tr align="right">
