@@ -40,7 +40,7 @@ Nama : {{$mahasiswa->nama}}<br/>
     </tr>
     @php
         $jumlahAspek=$jumlahAspek+1;
-        $subtotal=$subtotal+$item->nilai
+        $subtotal=$subtotal+$item->nilai;
     @endphp
 
     @if ($loop->iteration ==$loop->count || $item->sub_kompetensi->id!=$nilaiSubKompetensi[$loop->index+1]->sub_kompetensi->id)
