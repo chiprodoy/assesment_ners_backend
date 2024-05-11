@@ -22,8 +22,9 @@ class AssesmenReportController extends MainController
         if(!$this->mahasiswa)
                return $this->errorResponse(422,'mahasiswa tidak ditemukan');
 
-        $pdf = Pdf::loadView('pdf.personal_report',get_object_vars($this));
+      //  $pdf = Pdf::loadView('pdf.personal_report',get_object_vars($this));
        // return $pdf->download('personal_report.pdf');
-       return $pdf->stream();
+      // return $pdf->stream();
+      return view('pdf.personal_report',get_object_vars($this));
     }
 }
