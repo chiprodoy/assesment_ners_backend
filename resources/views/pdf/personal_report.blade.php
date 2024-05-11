@@ -43,7 +43,7 @@ Nama : {{$mahasiswa->nama}}<br/>
         $subtotal=$subtotal+$item->nilai;
     @endphp
 
-    @if ($loop->iteration ==$loop->count || $item->sub_kompetensi->id!=$nilaiSubKompetensi[$loop->index+1]->sub_kompetensi->id)
+    @if ($loop->iteration ==$loop->count || $item->sub_kompetensi->id!=$nilaiSubKompetensi[$loop->iteration+1]->sub_kompetensi->id)
 
     <tr>
         <td></td>
