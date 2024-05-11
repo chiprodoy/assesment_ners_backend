@@ -42,7 +42,7 @@ Nama : {{$mahasiswa->nama}}<br/>
         $jumlahAspek=$jumlahAspek+1;
         $subtotal=$subtotal+$item->nilai;
     @endphp
-        @if ($loop->last)
+        @if ($loop->remaining == 0)
         <tr>
             <td></td>
             <td>Total Skor</td>
@@ -67,7 +67,7 @@ Nama : {{$mahasiswa->nama}}<br/>
             <td>Poin </td>
             <td>{{$subPoin}}</td>
         </tr>
-        @elseif (!$loop->last)
+        @else
         @if ($item->sub_kompetensi->id!=$nilaiSubKompetensi[$loop->index+1]->sub_kompetensi->id)
         <tr>
             <td></td>
