@@ -76,7 +76,7 @@ Route::get('/asesmen_report/{mahasiswa_uuid}', [AssesmenReportController::class,
                 ->name('asesmen_report.show');
 
 Route::post('/dosen', [DosenController::class, 'store'])
-                ->middleware('auth:sanctum')
+               // ->middleware('auth:sanctum')
                 ->name('dosen.store');
 /**
  *
