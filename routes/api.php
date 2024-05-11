@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\DosenController;
 use App\Http\Controllers\KompetensiController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliahController;
@@ -73,6 +74,10 @@ Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])
 Route::get('/asesmen_report/{mahasiswa_uuid}', [AssesmenReportController::class, 'show'])
                // ->middleware('auth:sanctum')
                 ->name('asesmen_report.show');
+
+Route::post('/dosen', [DosenController::class, 'store'])
+                ->middleware('auth:sanctum')
+                ->name('dosen.store');
 /**
  *
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {

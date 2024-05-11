@@ -68,4 +68,12 @@ class User extends Authenticatable
     {
         return $this->hasOne(Mahasiswa::class);
     }
+
+            /**
+     * Get the comments for the blog post.
+     */
+    public function dosen()
+    {
+        return $this->hasOne(Dosen::class);
+    }
 }
