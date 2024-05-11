@@ -17,11 +17,18 @@ Nama : {{$mahasiswa->nama}}<br/>
     </tr>
     @php
         $subtotal = 0;
+        $jumlahAspek = 0;
     @endphp
     @foreach ($nilaiSubKompetensi as $item)
     @if ($loop->index==0)
     <tr>
-        <td colspan="3">{{ ucwords($item->sub_kompetensi->kompetensi->nama_kompetensi) }}</td>
+        <td colspan="3">{{ ucwords($item->sub_kompetensi->kompetensi->nama_kompetensi) }} - ({{$item->sub_kompetensi->kompetensi->persentase*100}}%)</td>
+
+    </tr>
+    @endif
+    @if ($loop->index > 0 && $item->sub_kompetensi->id!=$nilaiSubKompetensi[$loop->index-1]->sub_kompetensi->id)
+    <tr>
+        <td colspan="3">{{ ucwords($item->sub_kompetensi->kompetensi->nama_kompetensi) }} - ({{$item->sub_kompetensi->kompetensi->persentase*100}}%)</td>
 
     </tr>
     @endif
@@ -29,9 +36,15 @@ Nama : {{$mahasiswa->nama}}<br/>
     <tr>
         <td>{{ $loop->iteration}}</td>
         <td>{{ $item->sub_kompetensi->nama_sub_kompetensi }}</td>
-        <td>@php echo $item->nilai; $subtotal=$subtotal+$item->nilai @endphp </td>
+        <td>{{$item->nilai}}</td>
     </tr>
-    @endforeach
+    @php
+        $jumlahAspek=$jumlahAspek+1;
+        $subtotal=$subtotal+$item->nilai
+    @endphp
+
+    @if ($loop->iteration ==$loop->count || $item->sub_kompetensi->id!=$nilaiSubKompetensi[$loop->index+1]->sub_kompetensi->id)
+
     <tr>
         <td></td>
         <td>Total Skor</td>
@@ -39,20 +52,27 @@ Nama : {{$mahasiswa->nama}}<br/>
     </tr>
     <tr>
         <td></td>
-        <td>Nilai  (total skor /44*100)</td>
-        <td>@php
-            $subNilai = $subtotal/44*100;
-            echo $subNilai
-        @endphp</td>
+        <td>Nilai  (total skor /{{$jumlahAspek}}*100)</td>
+        @php
+            $subNilai = $subtotal/$jumlahAspek*100;
+            $subNilais[]=$subNilai;
+            $jumlahAspek = 0;
+        @endphp
+        <td>{{$subNilai}}</td>
     </tr>
+    @php
+        $subPoin = $subNilai/$item->sub_kompetensi->kompetensi->persentase;
+        $subPoins[]=$subPoin;
+    @endphp
     <tr>
         <td></td>
         <td>Poin </td>
-        <td>@php
-            $subPoin = $subNilai/30*100;
-            echo $subPoin
-        @endphp</td>
+        <td>{{$subPoin}}</td>
     </tr>
+    @endif
+
+    @endforeach
+
 </table>
 </body>
 </html>
