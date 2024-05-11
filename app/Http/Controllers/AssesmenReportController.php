@@ -16,9 +16,9 @@ class AssesmenReportController extends MainController
 
        // $this->mahasiswa = Mahasiswa::where('uuid',$mahasiswaUUID)->first();
        $this->mahasiswa = Mahasiswa::find($mahasiswaUUID);
-        dd($this->mahasiswa);
+        
        $this->nilaiSubKompetensi = NilaiSubKompetensi::where('mahasiswa_id',$this->mahasiswa->id)->get();
-
+dd($this->nilaiSubKompetensi);
         if(!$this->mahasiswa)
                return $this->errorResponse(422,'mahasiswa tidak ditemukan');
 
