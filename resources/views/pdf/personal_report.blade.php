@@ -67,7 +67,7 @@ Nama : {{$mahasiswa->nama}}<br/>
             <td>Poin </td>
             <td>{{$subPoin}}</td>
         </tr>
-        @elseif ($item->sub_kompetensi->id!=$nilaiSubKompetensi[$loop->iteration+1]->sub_kompetensi->id)
+        @elseif (!$loop->last && $item->sub_kompetensi->id!=$nilaiSubKompetensi[$loop->iteration+1]->sub_kompetensi->id)
         <tr>
             <td></td>
             <td>Total Skor</td>
