@@ -71,7 +71,7 @@ Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth:sanctum')
                 ->name('logout');
 
-Route::get('/asesmen_report/{mahasiswa_uuid}', [AssesmenReportController::class, 'show'])
+Route::get('/asesmen_report/{mahasiswa_uuid}/{mode?}', [AssesmenReportController::class, 'show'])
                // ->middleware('auth:sanctum')
                 ->name('asesmen_report.show');
 

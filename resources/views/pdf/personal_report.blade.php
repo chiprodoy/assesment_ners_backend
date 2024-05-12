@@ -5,7 +5,7 @@
   </head>
   <body>
 
-<h1>ASESMEN LAPORAN PENDAHULUAN TINJAUAN KASUS</h1>
+<h1>ASESMEN {{strtoupper($nilaiSubKompetensi[0]->sub_kompetensi->kompetensi->asesmen->nama_asesmen)}}</h1>
 NIM : {{$mahasiswa->npm}}<br/>
 Nama : {{$mahasiswa->nama}}<br/>
 <table border=1 cellspacing=0 cellpadding=3 width='100%'>
@@ -18,6 +18,12 @@ Nama : {{$mahasiswa->nama}}<br/>
     @php
         $subtotal = 0;
         $jumlahAspek = 0;
+        $indexSubtotal=0;
+        $subTotals=[0,0,0,0];
+        $naKognitif = 0;
+        $naPsikoMotor = 0;
+        $naAfektif = 0;
+        $naSocial = 0;
     @endphp
     @foreach ($nilaiSubKompetensi as $item)
     @if ($loop->index==0)
@@ -42,6 +48,11 @@ Nama : {{$mahasiswa->nama}}<br/>
             <td>Total Skor</td>
             <td>{{$subtotal}}</td>
         </tr>
+        @php
+            $subTotals[$indexSubtotal]=$subtotal;
+            $indexSubtotal = $indexSubtotal+1;
+
+        @endphp
         <tr align="right">
             <td></td>
             <td>Nilai  (total skor /{{$jumlahAspek}}*100)</td>
@@ -63,6 +74,11 @@ Nama : {{$mahasiswa->nama}}<br/>
         </tr>
         @else
         @if ($item->sub_kompetensi->kompetensi->id!=$nilaiSubKompetensi[$loop->index+1]->sub_kompetensi->kompetensi->id)
+        @php
+            $subTotals[$indexSubtotal]=$subtotal;
+            $indexSubtotal = $indexSubtotal+1;
+
+        @endphp
         <tr align="right">
             <td></td>
             <td>Total Skor</td>
@@ -81,10 +97,11 @@ Nama : {{$mahasiswa->nama}}<br/>
         @php
             $subPoin = $subNilai/$item->sub_kompetensi->kompetensi->persentase;
             $subPoins[]=$subPoin;
+
         @endphp
         <tr align="right">
             <td></td>
-            <td>Poin </td>
+            <td>Poin (nilai x {{$item->sub_kompetensi->kompetensi->persentase*100}}/100)</td>
             <td>{{$subPoin}}</td>
         </tr>
         <tr>
@@ -97,6 +114,48 @@ Nama : {{$mahasiswa->nama}}<br/>
 
     @endforeach
 
+</table>
+<h2>KUMULATIF NILAI </h2>
+<table width='80%' border="1" cellspacing=0 cellpadding=3>
+    <tr>
+        <td rowspan="2">No</td>
+        <td rowspan="2">Asesmen</td>
+        <td colspan="4">Kompetensi</td>
+        <td rowspan="2">Total Nilai</td>
+        <td rowspan="2">Grade</td>
+    </tr>
+    <tr>
+        <td>Kognitif</td>
+        <td>Psikomotor</td>
+        <td>Afektif</td>
+        <td>Sosial</td>
+    </tr>
+        <td></td>
+        <td>{{$nilaiSubKompetensi[0]->sub_kompetensi->kompetensi->asesmen->nama_asesmen}}</td>
+        <td>{{$subTotals[0]}}</td>
+        <td>{{$subTotals[1]}}</td>
+        <td>{{$subTotals[2]}}</td>
+        <td>{{$subTotals[3]}}</td>
+        <td>{{$subTotals[0] + $subTotals[1] + $subTotals[2] + $subTotals[3]}}</td>
+        <td></td>
+    </tr>
+    @php
+        $naKognitif = $naKognitif+$subTotals[0];
+        $naPsikoMotor = $naPsikoMotor+$subTotals[1];
+        $naAfektif = $naAfektif+$subTotals[2];
+        $naSocial = $naSocial+$subTotals[3];
+
+    @endphp
+    <tr>
+        <td></td>
+        <td>Nilai Akhir</td>
+        <td>{{$naKognitif}}</td>
+        <td>{{$naPsikoMotor}}</td>
+        <td>{{$naAfektif}}</td>
+        <td>{{$naSocial}}</td>
+        <td>{{$totalNA=$naKognitif + $naPsikoMotor + $naAfektif + $naSocial}}</td>
+        <td></td>
+    </tr>
 </table>
 </body>
 </html>
