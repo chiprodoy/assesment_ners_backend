@@ -24,6 +24,7 @@ class User extends Authenticatable
         'telepon',
         'email',
         'password',
+        'uuid'
     ];
 
     /**
@@ -58,5 +59,21 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Role::class);
+    }
+
+        /**
+     * Get the comments for the blog post.
+     */
+    public function mahasiswa()
+    {
+        return $this->hasOne(Mahasiswa::class);
+    }
+
+            /**
+     * Get the comments for the blog post.
+     */
+    public function dosen()
+    {
+        return $this->hasOne(Dosen::class);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Auth\MahasiswaRequest;
+use App\Http\Requests\MahasiswaRequest;
 use App\Http\Resources\MahasiswaResource;
 use App\Http\Resources\MataKuliahResource;
 use App\Models\Mahasiswa;
@@ -10,6 +10,8 @@ use App\Models\MataKuliah;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+
+use function Laravel\Prompts\password;
 
 class MahasiswaController extends MainController
 {
@@ -30,15 +32,23 @@ class MahasiswaController extends MainController
         $validatedMhs = $request->safe()->except(['telepon', 'email']);
         $validateUser = $request->safe()->only(['telepon', 'email']);
 
+        $validateUser['uuid']='-';
+        $validateUser['name']=$validatedMhs['nama'];
+        $validateUser['nidn_npm']=$validatedMhs['npm'];
+        $validateUser['password']='password';
+
         $userSave=User::create($validateUser);
+        $user = User::where('email',$validateUser['email'])->first();
+        // attach role mahasiswa
+        $user->roles()->attach(1);
 
-        $validatedMhs['user_id']=$userSave->id;
+        $validatedMhs['uuid']='-';
 
-        $dataSave=$this->saveRecord($validatedMhs);
-
+        $dataSave=$user->mahasiswa()->create($validatedMhs);
+        $mhs = Mahasiswa::where('npm',$validatedMhs['npm'])->get();
 
         if($dataSave && $userSave){
-            return MahasiswaResource::collection($dataSave);
+            return MahasiswaResource::collection($mhs);
         }
     }
 
