@@ -22,7 +22,7 @@ Nama : {{$mahasiswa->nama}}<br/>
     @foreach ($nilaiSubKompetensi as $item)
     @if ($loop->index==0)
     <tr>
-        <td colspan="3">{{ ucwords($item->sub_kompetensi->kompetensi->nama_kompetensi) }} - ({{$item->sub_kompetensi->kompetensi->persentase*100}}%)</td>
+        <td colspan="3"><strong>{{ ucwords($item->sub_kompetensi->kompetensi->nama_kompetensi) }} - ({{$item->sub_kompetensi->kompetensi->persentase*100}}%)</strong></td>
 
     </tr>
     @endif
@@ -88,7 +88,7 @@ Nama : {{$mahasiswa->nama}}<br/>
             <td>{{$subPoin}}</td>
         </tr>
         <tr>
-            <td colspan="3">{{ ucwords($item->sub_kompetensi->kompetensi->nama_kompetensi) }} - ({{$item->sub_kompetensi->kompetensi->persentase*100}}%)</td>
+            <td colspan="3"><strong>{{ ucwords($item->sub_kompetensi->kompetensi->nama_kompetensi) }} - ({{$item->sub_kompetensi->kompetensi->persentase*100}}%)</strong></td>
         </tr>
         @endif
         @endif
