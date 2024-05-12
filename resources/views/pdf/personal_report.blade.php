@@ -154,7 +154,26 @@ Nama : {{$mahasiswa->nama}}<br/>
         <td>{{$naAfektif}}</td>
         <td>{{$naSocial}}</td>
         <td>{{$totalNA=$naKognitif + $naPsikoMotor + $naAfektif + $naSocial}}</td>
-        <td></td>
+        <td>
+            @php
+                if($totalNA <= 100 && $totalNA >= 80){
+                    $grade='A';
+                }elseif ($totalNA < 80 && $totalNA >= 70) {
+                    # code...
+                    $grade='B';
+
+                }elseif ($totalNA < 70 && $totalNA >= 51) {
+                    # code...
+                    $grade='C';
+                }elseif ($totalNA < 51 && $totalNA >= 30) {
+                    # code...
+                    $grade='D';
+                }else{
+                    $grade='E';
+                }
+            @endphp
+            {{$grade}}
+        </td>
     </tr>
 </table>
 </body>
