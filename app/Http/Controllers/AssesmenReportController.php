@@ -12,7 +12,7 @@ class AssesmenReportController extends MainController
     public $mahasiswa;
     public $nilaiSubKompetensi;
     //
-    public function show($mahasiswaUUID){
+    public function show($mahasiswaUUID,$mode='pdf'){
 
        // $this->mahasiswa = Mahasiswa::where('uuid',$mahasiswaUUID)->first();
        $this->mahasiswa = Mahasiswa::find($mahasiswaUUID);
@@ -22,9 +22,15 @@ class AssesmenReportController extends MainController
         if(!$this->mahasiswa)
                return $this->errorResponse(422,'mahasiswa tidak ditemukan');
 
+        if($mode=='pdf'){
+            $pdf = Pdf::loadView('pdf.personal_report',get_object_vars($this));
+            // return $pdf->download('personal_report.pdf');
+            return $pdf->stream();
+        }else{
+            return view('pdf.personal_report',get_object_vars($this));
+        }
       //  $pdf = Pdf::loadView('pdf.personal_report',get_object_vars($this));
        // return $pdf->download('personal_report.pdf');
       // return $pdf->stream();
-      return view('pdf.personal_report',get_object_vars($this));
     }
 }
