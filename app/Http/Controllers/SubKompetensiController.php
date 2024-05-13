@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use App\Http\Resources\SubKompetensiResource;
 use App\Models\Asesmen;
 use App\Models\Kompetensi;
+use App\Models\MataKuliah;
 use App\Models\SubKompetensi;
 use Illuminate\Http\Request;
 
 class SubKompetensiController extends MainController
 {
     public $model = SubKompetensi::class;
-
+    public $matakuliah;
+    public $asesmen;
+    public $kompetensi;
      /**
      * Sub Kompetensi
      *
@@ -43,4 +46,21 @@ class SubKompetensiController extends MainController
         return SubKompetensiResource::collection($this->record->get());
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create(Request $request)
+    {
+        //
+
+        $this->matakuliah = MataKuliah::all();
+
+        if($request->has('mata_kuliah'))
+            $this->asesmen = Asesmen::where('mata_kuliah_id',$request->get('mata_kuliah'))->get();
+
+        if($request->has('asesmen'))
+            $this->kompetensi = Kompetensi::where('asesmen_id',$request->get('asesmen'))->get();
+
+        return view('subkompetensi.create',get_object_vars($this));
+    }
 }
