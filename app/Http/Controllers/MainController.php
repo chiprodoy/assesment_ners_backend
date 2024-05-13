@@ -20,14 +20,6 @@ class MainController extends Controller
         return $this->record;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
     public function saveRecord($data){
         $rec = $this->model::create($data);
         return $rec;
