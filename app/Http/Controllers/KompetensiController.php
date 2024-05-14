@@ -9,6 +9,7 @@ use App\Models\Kompetensi;
 use App\Models\MataKuliah;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Redirect;
 
 class KompetensiController extends MainController
@@ -62,6 +63,10 @@ class KompetensiController extends MainController
         if($save){
             return Redirect::route('kompetensi.create');
         }
+    }
+
+    public function seed(){
+        Artisan::call('seed:kompetensi');
     }
 
 

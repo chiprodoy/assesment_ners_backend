@@ -8,6 +8,7 @@ use App\Models\Kompetensi;
 use App\Models\MataKuliah;
 use App\Models\SubKompetensi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class SubKompetensiController extends MainController
 {
@@ -62,5 +63,9 @@ class SubKompetensiController extends MainController
             $this->kompetensi = Kompetensi::where('asesmen_id',$request->get('asesmen'))->get();
 
         return view('subkompetensi.create',get_object_vars($this));
+    }
+
+    public function seed(){
+        Artisan::call('seed:subkompetensi');
     }
 }
