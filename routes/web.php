@@ -25,7 +25,13 @@ Route::get('/kompetensi/create', [KompetensiController::class, 'create'])
 Route::post('/kompetensi', [KompetensiController::class, 'store'])
                 ->name('kompetensi.store');
 
+Route::get('/kompetensi/seed', [KompetensiController::class, 'seed'])
+                ->name('kompetensi.seed');
+
 Route::get('/subkompetensi/create', [SubKompetensiController::class, 'create'])
                 ->name('subkompetensi.create');
+
+Route::get('/subkompetensi/seed', [SubKompetensiController::class, 'seed'])
+                ->name('subkompetensi.seed');
 
 require __DIR__.'/auth.php';
