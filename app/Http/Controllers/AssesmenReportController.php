@@ -32,7 +32,7 @@ class AssesmenReportController extends MainController
        ->where('mahasiswa_id',$this->mahasiswa->id)
        ->where('asesmens.mata_kuliah_id',$asesmenid)
        ->toSql();
-        dd($this->nilaiSubKompetensi);
+        print_r($query->getBindings());dd($this->nilaiSubKompetensi);
         if($mode=='pdf'){
             $pdf = Pdf::loadView('pdf.personal_report',get_object_vars($this));
             // return $pdf->download('personal_report.pdf');
