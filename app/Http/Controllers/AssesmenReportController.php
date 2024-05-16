@@ -35,6 +35,7 @@ class AssesmenReportController extends MainController
         if($mode=='pdf'){
             $pdf = Pdf::loadView('pdf.personal_report',get_object_vars($this));
             // return $pdf->download('personal_report.pdf');
+
             return $pdf->stream();
         }elseif($mode=='pdf-download'){
             $pdf = Pdf::loadView('pdf.personal_report',get_object_vars($this));
