@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
   <head>
     <meta charset="utf-8">
     <title>Laporan Asesmen</title>
@@ -130,6 +130,7 @@ Nama : {{$mahasiswa->nama}}<br/>
         <td>Afektif</td>
         <td>Sosial</td>
     </tr>
+    <tr>
         <td></td>
         <td>{{$nilaiSubKompetensi[0]->sub_kompetensi->kompetensi->asesmen->nama_asesmen}}</td>
         <td>{{$subTotals[0]}}</td>
