@@ -1,6 +1,6 @@
 <!DOCTYPE html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Laporan Asesmen</title>
   </head>
   <body>
@@ -23,7 +23,7 @@ Nama : {{$mahasiswa->nama}}<br/>
         $naKognitif = 0;
         $naPsikoMotor = 0;
         $naAfektif = 0;
-        $naSocial = 0;exit();
+        $naSocial = 0;
     @endphp
     @foreach ($nilaiSubKompetensi as $item)
     @if ($loop->index==0)
