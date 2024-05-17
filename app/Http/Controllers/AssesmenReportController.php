@@ -14,7 +14,8 @@ class AssesmenReportController extends MainController
     public $nilaiSubKompetensi;
     //
     public function show($mahasiswaUUID,$asesmenid,$mode='pdf'){
-
+ini_set('max_execution_time', 300);
+ini_set("memory_limit","512M");
        // $this->mahasiswa = Mahasiswa::where('uuid',$mahasiswaUUID)->first();
        $this->mahasiswa = Mahasiswa::find($mahasiswaUUID);
 
