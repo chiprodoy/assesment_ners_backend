@@ -40,7 +40,7 @@ Nama : {{$mahasiswa->nama}}<br/>
     </tr>
     @php
         $jumlahAspek=$jumlahAspek+1;
-        $subtotal=$subtotal+$item->nilai;exit();
+        $subtotal=$subtotal+$item->nilai;
     @endphp
         @if ($loop->remaining == 0)
         <tr align="right">
@@ -51,7 +51,7 @@ Nama : {{$mahasiswa->nama}}<br/>
         @php
             $subTotals[$indexSubtotal]=$subtotal;
             $indexSubtotal = $indexSubtotal+1;
-
+            exit('</table></body></html>');
         @endphp
         <tr align="right">
             <td></td>
