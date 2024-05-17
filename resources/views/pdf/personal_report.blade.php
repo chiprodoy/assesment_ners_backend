@@ -23,7 +23,7 @@ Nama : {{$mahasiswa->nama}}<br/>
         $naKognitif = 0;
         $naPsikoMotor = 0;
         $naAfektif = 0;
-        $naSocial = 0;
+        $naSocial = 0;exit('</table></body></html>');
     @endphp
     @foreach ($nilaiSubKompetensi as $item)
     @if ($loop->index==0)
@@ -51,7 +51,7 @@ Nama : {{$mahasiswa->nama}}<br/>
         @php
             $subTotals[$indexSubtotal]=$subtotal;
             $indexSubtotal = $indexSubtotal+1;
-            exit('</table></body></html>');
+            
         @endphp
         <tr align="right">
             <td></td>
