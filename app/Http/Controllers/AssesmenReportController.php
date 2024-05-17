@@ -36,7 +36,6 @@ ini_set("memory_limit","512M");
         if($mode=='pdf'){
             $pdf = Pdf::setOption(['debugLayout'=>true])->loadView('pdf.personal_report',get_object_vars($this));
             // return $pdf->download('personal_report.pdf');
-            dd($pdf);
             return $pdf->stream();
         }elseif($mode=='pdf-download'){
             $pdf = Pdf::loadView('pdf.personal_report',get_object_vars($this));
