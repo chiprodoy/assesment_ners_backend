@@ -23,7 +23,7 @@ Nama : {{$mahasiswa->nama}}<br/>
         $naKognitif = 0;
         $naPsikoMotor = 0;
         $naAfektif = 0;
-        $naSocial = 0;exit('</table></body></html>');
+        $naSocial = 0;exit();
     @endphp
     @foreach ($nilaiSubKompetensi as $item)
     @if ($loop->index==0)
