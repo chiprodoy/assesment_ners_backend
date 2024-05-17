@@ -33,7 +33,82 @@ Nama : {{$mahasiswa->nama}}<br/>
     </tr>
     @endif
 
+    <tr>
+        <td>{{ $loop->iteration}}</td>
+        <td>{{ $item->sub_kompetensi->nama_sub_kompetensi }} - {{$item->sub_kompetensi->kompetensi->nama_kompetensi}}</td>
+        <td>{{$item->nilai}}</td>
+    </tr>
+    @php
+        $jumlahAspek=$jumlahAspek+1;
+        $subtotal=$subtotal+$item->nilai;exit();
+    @endphp
+        @if ($loop->remaining == 0)
+        <tr align="right">
+            <td></td>
+            <td>Total Skor</td>
+            <td>{{$subtotal}}</td>
+        </tr>
+        @php
+            $subTotals[$indexSubtotal]=$subtotal;
+            $indexSubtotal = $indexSubtotal+1;
 
+        @endphp
+        <tr align="right">
+            <td></td>
+            <td>Nilai  (total skor /{{$jumlahAspek}}*100)</td>
+            @php
+                $subNilai = $subtotal/$jumlahAspek*100;
+                $subNilais[]=$subNilai;
+                $jumlahAspek = 0;
+            @endphp
+            <td>{{$subNilai}}</td>
+        </tr>
+        @php
+            $subPoin = $subNilai/$item->sub_kompetensi->kompetensi->persentase;
+            $subPoins[]=$subPoin;
+        @endphp
+        <tr align="right">
+            <td></td>
+            <td>Poin </td>
+            <td>{{$subPoin}}</td>
+        </tr>
+        @else
+        @if ($item->sub_kompetensi->kompetensi->id!=$nilaiSubKompetensi[$loop->index+1]->sub_kompetensi->kompetensi->id)
+        @php
+            $subTotals[$indexSubtotal]=$subtotal;
+            $indexSubtotal = $indexSubtotal+1;
+
+        @endphp
+        <tr align="right">
+            <td></td>
+            <td>Total Skor</td>
+            <td>{{$subtotal}}</td>
+        </tr>
+        <tr align="right">
+            <td></td>
+            <td>Nilai  (total skor /{{$jumlahAspek}}*100)</td>
+            @php
+                $subNilai = $subtotal/$jumlahAspek*100;
+                $subNilais[]=$subNilai;
+                $jumlahAspek = 0;
+            @endphp
+            <td>{{$subNilai}}</td>
+        </tr>
+        @php
+            $subPoin = $subNilai/$item->sub_kompetensi->kompetensi->persentase;
+            $subPoins[]=$subPoin;
+
+        @endphp
+        <tr align="right">
+            <td></td>
+            <td>Poin (nilai x {{$item->sub_kompetensi->kompetensi->persentase*100}}/100)</td>
+            <td>{{$subPoin}}</td>
+        </tr>
+        <tr>
+            <td colspan="3"><strong>{{ ucwords($item->sub_kompetensi->kompetensi->nama_kompetensi) }} - ({{$item->sub_kompetensi->kompetensi->persentase*100}}%)</strong></td>
+        </tr>
+        @endif
+        @endif
 
 
 
