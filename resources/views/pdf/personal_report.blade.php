@@ -157,7 +157,7 @@ Nama : {{$mahasiswa->nama}}<br/>
         <td>{{$totalNA=$naKognitif + $naPsikoMotor + $naAfektif + $naSocial}}</td>
         <td>
             @php
-                if($totalNA <= 100 && $totalNA >= 80){
+                if($totalNA >= 80){
                     $grade='A';
                 }elseif ($totalNA < 80 && $totalNA >= 70) {
                     # code...
