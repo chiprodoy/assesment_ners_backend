@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AsesmenController;
 use App\Http\Controllers\AssesmenReportController;
+use App\Http\Controllers\AssesmenSummaryReportController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
