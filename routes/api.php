@@ -75,6 +75,9 @@ Route::get('/asesmen_report/{mahasiswa_uuid}/{asesmenid}/{mode?}', [AssesmenRepo
                // ->middleware('auth:sanctum')
                 ->name('asesmen_report.show');
 
+Route::get('/asesmen_summary_report/{mahasiswa_uuid}/{asesmenid}/{mode?}', [AssesmenSummaryReportController::class, 'show'])
+               // ->middleware('auth:sanctum')
+                ->name('asesmen_summary_report.show');
 Route::post('/dosen', [DosenController::class, 'store'])
                // ->middleware('auth:sanctum')
                 ->name('dosen.store');
