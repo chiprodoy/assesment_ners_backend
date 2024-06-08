@@ -40,7 +40,14 @@ class Kompetensi extends MainModel
         return $this->belongsTo(Asesmen::class);
 
     }
+     /**
+     * Get subkompetensi
+     */
+    public function sub_kompetensi()
+    {
+        return $this->hasMany(SubKompetensi::class);
 
+    }
 }
 
 class GroupKompetensi

@@ -23,6 +23,7 @@ class AuthResource extends JsonResource
             'token'=>$token->plainTextToken,
             'refresh_token'=>$refresh_token->plainTextToken,
             'user'=>[
+                'id'=>$this->id,
                 'name'=>$this->name,
                 'email'=>$this->email,
                 'roles'=>$this->roles
