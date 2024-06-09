@@ -9,10 +9,12 @@ class MainController extends Controller
 
     public $model;
     public $record;
+    public $defaultOrderKey='id';
+    public $defaultOrderSort='asc';
 
     public function setRecord()
     {
-        $this->record=$this->model::orderBy('id','desc');
+        $this->record=$this->model::orderBy($this->defaultOrderKey,$this->defaultOrderSort);
     }
 
     public function getRecord()

@@ -22,6 +22,7 @@ class KompetensiResource extends JsonResource
             'created_at'=>$this->created_at,
             'updated_at'=>$this->updated_at,
             'asesmen'=>$this->asesmen,
+            'sub_kompetensi'=>$this->sub_kompetensi
         ];
     }
 }

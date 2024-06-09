@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AsesmenController;
 use App\Http\Controllers\AssesmenReportController;
+use App\Http\Controllers\AssesmenSummaryReportController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
@@ -36,7 +37,7 @@ Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->name('login');
 
 Route::get('/matakuliah', [MataKuliahController::class, 'index'])
-                ->middleware('auth:sanctum')
+                //->middleware('auth:sanctum')
                 ->name('matakuliah.index');
 
 Route::get('/mahasiswa', [MahasiswaController::class, 'index'])
@@ -75,9 +76,15 @@ Route::get('/asesmen_report/{mahasiswa_uuid}/{asesmenid}/{mode?}', [AssesmenRepo
                // ->middleware('auth:sanctum')
                 ->name('asesmen_report.show');
 
+Route::get('/asesmen_summary_report/{mahasiswa_uuid}/{asesmenid}/{mode?}', [AssesmenSummaryReportController::class, 'show'])
+               // ->middleware('auth:sanctum')
+                ->name('asesmen_summary_report.show');
 Route::post('/dosen', [DosenController::class, 'store'])
                // ->middleware('auth:sanctum')
                 ->name('dosen.store');
+Route::get('/dosen', [DosenController::class, 'index'])
+                // ->middleware('auth:sanctum')
+                 ->name('dosen.index');
 /**
  *
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {

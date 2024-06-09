@@ -38,5 +38,24 @@ class Kompetensi extends MainModel
     public function asesmen()
     {
         return $this->belongsTo(Asesmen::class);
+
     }
+     /**
+     * Get subkompetensi
+     */
+    public function sub_kompetensi()
+    {
+        return $this->hasMany(SubKompetensi::class);
+
+    }
+}
+
+class GroupKompetensi
+{
+    const KOGNITIF = 'kognitif';
+    const PSIKOMOTORIK = 'psikomotorik';
+    const AFEKTIF = 'afektif';
+    const SOCIAL_INTERACTION = 'social interaction';
+
+
 }

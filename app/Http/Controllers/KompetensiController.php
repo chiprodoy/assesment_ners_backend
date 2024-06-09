@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Str;
 
 class KompetensiController extends MainController
 {
@@ -26,8 +27,11 @@ class KompetensiController extends MainController
      * @authenticated
      */
     public function index($asesmen_uuid){
+        if(Str::isUuid($asesmen_uuid))
+           $asesmen = Asesmen::where('uuid',$asesmen_uuid)->first();
+        else
+           $asesmen = Asesmen::where('id',$asesmen_uuid)->first();
 
-        $asesmen = Asesmen::where('uuid',$asesmen_uuid)->first();
 
         $this->setRecord();
         $this->record->where('asesmen_id',$asesmen->id);

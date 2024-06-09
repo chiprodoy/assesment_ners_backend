@@ -17,6 +17,7 @@ return new class extends Migration
             $table->uuid();
             $table->foreignIdFor(Asesmen::class);
             $table->string('nama_kompetensi'); // kognitif,psikomotrik,afektif,social
+            $table->string('grup_kompetensi'); // Kompetensi::class;
             $table->decimal('persentase');
             $table->timestamps();
             $table->softDeletes();
