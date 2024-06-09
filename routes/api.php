@@ -37,7 +37,7 @@ Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->name('login');
 
 Route::get('/matakuliah', [MataKuliahController::class, 'index'])
-                ->middleware('auth:sanctum')
+                //->middleware('auth:sanctum')
                 ->name('matakuliah.index');
 
 Route::get('/mahasiswa', [MahasiswaController::class, 'index'])
@@ -82,6 +82,9 @@ Route::get('/asesmen_summary_report/{mahasiswa_uuid}/{asesmenid}/{mode?}', [Asse
 Route::post('/dosen', [DosenController::class, 'store'])
                // ->middleware('auth:sanctum')
                 ->name('dosen.store');
+Route::get('/dosen', [DosenController::class, 'index'])
+                // ->middleware('auth:sanctum')
+                 ->name('dosen.index');
 /**
  *
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
