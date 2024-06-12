@@ -6,6 +6,7 @@ use App\Models\Asesmen;
 use App\Models\Mahasiswa;
 use App\Models\MataKuliah;
 use App\Models\NilaiSubKompetensi;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\DB;
@@ -14,13 +15,19 @@ class AssesmenSummaryReportController extends MainController
 {
     public $mahasiswa;
     public $nilaiSubKompetensi;
+    public $user;
     //
 
     public function show($mahasiswaUUID,$matakuliahID,$mode='pdf'){
         ini_set('max_execution_time', 300);
         ini_set("memory_limit","512M");
        // $this->mahasiswa = Mahasiswa::where('uuid',$mahasiswaUUID)->first();
-       $this->mahasiswa = Mahasiswa::find($mahasiswaUUID);
+       $this->user = User::find($mahasiswaUUID);
+
+       if(!$this->user)
+           return $this->errorResponse(422,'user tidak ditemukan');
+
+       $this->mahasiswa = Mahasiswa::where('user_id',$this->user->id)->first();
 
        if(!$this->mahasiswa)
            return $this->errorResponse(422,'mahasiswa tidak ditemukan');
