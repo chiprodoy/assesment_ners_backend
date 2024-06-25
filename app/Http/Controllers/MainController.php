@@ -28,14 +28,14 @@ class MainController extends Controller
     }
 
     public function updateRecord($data){
-        $rec = $this->model::update($data);
+        $rec = $this->model->update($data);
         return $rec;
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Request $req,string $id)
     {
         //
     }

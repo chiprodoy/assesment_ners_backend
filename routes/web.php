@@ -31,6 +31,12 @@ Route::get('/kompetensi/seed', [KompetensiController::class, 'seed'])
 Route::get('/subkompetensi/create', [SubKompetensiController::class, 'create'])
                 ->name('subkompetensi.create');
 
+Route::get('/subkompetensi/edit/{uuid?}', [SubKompetensiController::class, 'edit'])
+                ->name('subkompetensi.edit');
+
+Route::post('/subkompetensi/{uuid}', [SubKompetensiController::class, 'update'])
+                ->name('subkompetensi.update');
+
 Route::get('/subkompetensi/seed', [SubKompetensiController::class, 'seed'])
                 ->name('subkompetensi.seed');
 
