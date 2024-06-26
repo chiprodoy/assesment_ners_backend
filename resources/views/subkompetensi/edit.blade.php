@@ -56,10 +56,10 @@
   </div>
 </form>
 
-@if (Session::has('success'))
+@if (Session::has('message'))
     <div class="alert alert-success">
         <ul>
-            <li>{!! Session::get('success') !!}</li>
+            <li>{!! Session::get('message') !!}</li>
         </ul>
     </div>
 @endif
