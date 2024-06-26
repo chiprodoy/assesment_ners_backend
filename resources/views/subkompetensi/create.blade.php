@@ -36,7 +36,7 @@
 
         <select class="form-select" name="kompetensi" id="kompetensi" >
             <option>Pilih Kompetensi</option>
-            @foreach ($asesmen as $item)
+            @foreach ($kompetensi as $item)
                 <option value="{{$item->id}}" {{ $selected = ($item->id == request()->get('kompetensi') ? 'selected' : '')}}>{{ $item->nama_kompetensi}}</option>
             @endforeach
         </select>

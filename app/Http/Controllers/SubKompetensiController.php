@@ -13,9 +13,22 @@ use Illuminate\Support\Facades\Artisan;
 class SubKompetensiController extends MainController
 {
     public $model = SubKompetensi::class;
+
     public $matakuliah;
+
     public $asesmen;
+
     public $kompetensi;
+
+    public $subKompetensi;
+
+    public $dataToEdit;
+
+    public $btnText;
+
+    public $frmAction;
+
+    public $frmMethod;
      /**
      * Sub Kompetensi
      *
@@ -63,6 +76,45 @@ class SubKompetensiController extends MainController
             $this->kompetensi = Kompetensi::where('asesmen_id',$request->get('asesmen'))->get();
 
         return view('subkompetensi.create',get_object_vars($this));
+    }
+
+    public function edit(Request $request,$id=''){
+        $this->matakuliah = MataKuliah::all();
+
+        if($request->has('mata_kuliah'))
+            $this->asesmen = Asesmen::where('mata_kuliah_id',$request->get('mata_kuliah'))->get();
+
+        if($request->has('asesmen'))
+            $this->kompetensi = Kompetensi::where('asesmen_id',$request->get('asesmen'))->get();
+
+        if($request->has('kompetensi_id'))
+            $this->subKompetensi = SubKompetensi::where('kompetensi_id',$request->get('kompetensi_id'))->get();
+
+        $this->dataToEdit = SubKompetensi::where('uuid',$id)->first();
+
+        if(empty($this->dataToEdit)) {
+            $this->btnText = 'Kirim';
+            $this->frmMethod='GET';
+            $this->frmAction = '';
+        }else{
+            $this->btnText='Simpan';
+            $this->frmMethod='POST';
+            $this->frmAction = route('subkompetensi.update',$this->dataToEdit->uuid);
+        }
+
+        return view('subkompetensi.edit',get_object_vars($this));
+    }
+
+    public function update(Request $request,$uuid){
+        $rec = $this->model::where('uuid',$uuid)->first();
+        $data = $request->only('kompetensi_id','nama_sub_kompetensi');
+        $updated = $rec->update($data);
+
+        if($updated){
+            return redirect()->to('/subkompetensi/edit/'.$rec->uuid.'?mata_kuliah='.$request->get('mata_kuliah').'&asesmen='.$request->get('asesmen').'&kompetensi_id='.$request->get('kompetensi_id'))->with('message', 'Data berhasil diedit');
+        }
+
+        return redirect()->to('/subkompetensi/edit/'.$rec->uuid.'?mata_kuliah='.$request->get('mata_kuliah').'&asesmen='.$request->get('asesmen').'&kompetensi_id='.$request->get('kompetensi_id'))->with('message', 'Data gagal diedit');
     }
 
     public function seed(){
