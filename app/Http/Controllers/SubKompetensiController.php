@@ -117,6 +117,23 @@ class SubKompetensiController extends MainController
         return redirect()->to('/subkompetensi/edit/'.$rec->uuid.'?mata_kuliah='.$request->get('mata_kuliah').'&asesmen='.$request->get('asesmen').'&kompetensi_id='.$request->get('kompetensi_id'))->with('message', 'Data gagal diedit');
     }
 
+        /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Request $request,string $uuid)
+    {
+        $qry=$this->model::where('uuid',$uuid);
+        $rec = $qry->first();
+        $deleted = $qry->delete();
+
+        if($deleted){
+            return redirect()->to('/subkompetensi/edit/'.$rec->uuid.'?mata_kuliah='.$request->get('mata_kuliah').'&asesmen='.$request->get('asesmen').'&kompetensi_id='.$request->get('kompetensi_id'))->with('message', 'Data berhasil dihapus');
+        }
+
+        return redirect()->to('/subkompetensi/edit/'.$rec->uuid.'?mata_kuliah='.$request->get('mata_kuliah').'&asesmen='.$request->get('asesmen').'&kompetensi_id='.$request->get('kompetensi_id'))->with('message', 'Data gagal dihapus');
+
+    }
+
     public function seed(){
         Artisan::call('seed:subkompetensi');
     }
