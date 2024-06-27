@@ -32,6 +32,7 @@ class MainController extends Controller
         return $rec;
     }
 
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -40,14 +41,6 @@ class MainController extends Controller
         //
     }
 
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 
     public function errorResponse($errorCode,$errorMsg){
         return response([

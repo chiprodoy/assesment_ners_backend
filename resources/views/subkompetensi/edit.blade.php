@@ -79,7 +79,14 @@
             <td>{{ $item->id}}</td>
             <td>{{ $item->kompetensi->nama_kompetensi}}</td>
             <td>{{ $item->nama_sub_kompetensi}}</td>
-            <td><a href="{{route('subkompetensi.edit',$item->uuid).'?mata_kuliah='.request()->get('mata_kuliah').'&asesmen='.request()->get('asesmen').'&kompetensi_id='.request()->get('kompetensi_id')}}">Edit</a></td>
+            <td><a class="btn btn-warning btn-sm" href="{{route('subkompetensi.edit',$item->uuid).'?mata_kuliah='.request()->get('mata_kuliah').'&asesmen='.request()->get('asesmen').'&kompetensi_id='.request()->get('kompetensi_id')}}">Edit</a></td>
+            <td>
+                <form method="POST" action="{{ route('subkompetensi.destroy',$item->uuid).'?mata_kuliah='.request()->get('mata_kuliah').'&asesmen='.request()->get('asesmen').'&kompetensi_id='.request()->get('kompetensi_id')}}">
+                    @method('delete')
+                    @csrf
+                    <button class="btn btn-danger btn-sm" type="submit">Hapus</button>
+                </form>
+            </td>
 
         </tr>
     @endforeach

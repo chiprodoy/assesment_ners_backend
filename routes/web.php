@@ -34,6 +34,9 @@ Route::get('/subkompetensi/create', [SubKompetensiController::class, 'create'])
 Route::get('/subkompetensi/edit/{uuid?}', [SubKompetensiController::class, 'edit'])
                 ->name('subkompetensi.edit');
 
+Route::delete('/subkompetensi/delete/{uuid?}', [SubKompetensiController::class, 'destroy'])
+                ->name('subkompetensi.destroy');
+
 Route::post('/subkompetensi/{uuid}', [SubKompetensiController::class, 'update'])
                 ->name('subkompetensi.update');
 
