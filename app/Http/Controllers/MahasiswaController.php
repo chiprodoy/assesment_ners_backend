@@ -10,6 +10,7 @@ use App\Models\MataKuliah;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 
 use function Laravel\Prompts\password;
 
@@ -26,6 +27,11 @@ class MahasiswaController extends MainController
     public function index(){
         $this->setRecord();
         return MahasiswaResource::collection($this->record->get());
+    }
+    public function show(String $uuid){
+        $mhs=$this->model::where('uuid',$uuid)->firstOrFail();
+        return MahasiswaResource::collection($mhs);
+
     }
 
     public function store(MahasiswaRequest $request){
@@ -52,16 +58,24 @@ class MahasiswaController extends MainController
         }
     }
 
-    public function update(MahasiswaRequest $request){
+    public function update(MahasiswaRequest $request,$user_id=null){
         $validatedMhs = $request->safe()->except(['telepon', 'email']);
         $validateUser = $request->safe()->only(['telepon', 'email']);
 
-        $dataSave=$this->updateRecord($validatedMhs);
+        $validateUser['name']=$validatedMhs['nama'];
+        $validateUser['nidn_npm']=$validatedMhs['npm'];
 
-        $userSave=User::find($dataSave->user_id)->update($validateUser);
+        if(empty($user_id)){
+            $user_id=Auth::user()->id;
+        }
+
+        $qry =$this->model::where('user_id',$user_id);
+        $dataSave=$qry->update($validatedMhs);
+
+        $userSave=User::find($user_id)->update($validateUser);
 
         if($dataSave && $userSave){
-            return MahasiswaResource::collection($dataSave);
+            return MahasiswaResource::collection($qry->get());
         }
     }
 

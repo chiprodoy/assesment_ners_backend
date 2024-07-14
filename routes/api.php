@@ -14,6 +14,7 @@ use App\Http\Controllers\KompetensiController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\NilaiSubKompetensiController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubKompetensiController;
 
 /*
@@ -44,9 +45,17 @@ Route::get('/mahasiswa', [MahasiswaController::class, 'index'])
                 ->middleware('auth:sanctum')
                 ->name('mahasiswa.index');
 
+Route::get('/mahasiswa/{uuid}', [MahasiswaController::class, 'show'])
+                ->middleware('auth:sanctum')
+                ->name('mahasiswa.show');
+
 Route::post('/mahasiswa', [MahasiswaController::class, 'store'])
                 ->middleware('auth:sanctum')
                 ->name('mahasiswa.store');
+
+Route::put('/mahasiswa', [MahasiswaController::class, 'update'])
+                ->middleware('auth:sanctum')
+                ->name('mahasiswa.update');
 
 Route::delete('/mahasiswa/{uuid}', [MahasiswaController::class, 'destroy'])
                 ->middleware('auth:sanctum')
@@ -79,12 +88,26 @@ Route::get('/asesmen_report/{mahasiswa_uuid}/{asesmenid}/{mode?}', [AssesmenRepo
 Route::get('/asesmen_summary_report/{mahasiswa_uuid}/{asesmenid}/{mode?}', [AssesmenSummaryReportController::class, 'show'])
                // ->middleware('auth:sanctum')
                 ->name('asesmen_summary_report.show');
+
 Route::post('/dosen', [DosenController::class, 'store'])
                // ->middleware('auth:sanctum')
                 ->name('dosen.store');
+
+Route::put('/dosen/{user_id?}', [DosenController::class, 'update'])
+                 ->middleware('auth:sanctum')
+                 ->name('dosen.update');
+
 Route::get('/dosen', [DosenController::class, 'index'])
                 // ->middleware('auth:sanctum')
                  ->name('dosen.index');
+
+Route::get('/profile', [ProfileController::class, 'index'])
+                  ->middleware('auth:sanctum')
+                  ->name('profile.index');
+
+Route::post('/profile/reset_password', [ProfileController::class, 'resetPassword'])
+                  ->middleware('auth:sanctum')
+                  ->name('profile.reset_password');
 /**
  *
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {

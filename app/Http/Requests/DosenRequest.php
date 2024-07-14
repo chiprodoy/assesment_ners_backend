@@ -26,7 +26,7 @@ class DosenRequest extends FormRequest
             'nama' => ['required', 'string'],
             'email' => ['required','email'],
             'telepon' => ['required'],
-            'password' => ['required'],
+//            'password' => ['required'],
 
         ];
     }

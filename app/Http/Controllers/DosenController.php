@@ -7,6 +7,7 @@ use App\Http\Resources\DosenResource;
 use App\Models\Dosen;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DosenController extends MainController
 {
@@ -41,6 +42,29 @@ class DosenController extends MainController
 
         if($dataSave && $userSave){
             return DosenResource::collection($dosen);
+        }
+    }
+
+    public function update(DosenRequest $request,$user_id=null){
+
+        if(empty($user_id)){
+            $user_id=Auth::user()->id;
+        }
+
+        $validatedDosen = $request->safe()->except(['telepon', 'email','password']);
+        $validateUser = $request->safe()->only(['telepon', 'email','password']);
+
+        $validateUser['name']=$validatedDosen['nama'];
+        $validateUser['nidn_npm']=$validatedDosen['nidn'];
+
+        $qry =$this->model::where('user_id',$user_id);
+        $dataSave=$qry->update($validatedDosen);
+        //$dataSave=$this->updateRecord($validatedDosen);
+        if($dataSave)
+        $userSave=User::find($user_id)->update($validateUser);
+
+        if($dataSave && $userSave){
+            return DosenResource::collection($qry->get());
         }
     }
 }
