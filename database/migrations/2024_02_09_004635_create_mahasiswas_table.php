@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Dosen;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -18,6 +19,7 @@ return new class extends Migration
             $table->string('npm');
             $table->string('nama');
             $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Dosen::class);
             $table->timestamps();
             $table->softDeletes();
         });
