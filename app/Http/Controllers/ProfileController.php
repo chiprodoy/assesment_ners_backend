@@ -7,6 +7,7 @@ use App\Http\Resources\MahasiswaResource;
 use App\Models\Mahasiswa;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -28,7 +29,7 @@ class ProfileController extends Controller
     public function resetPassword(Request $request){
         $userID=Auth::user()->id;
         $qry = User::where('id',$userID);
-        $update = $qry->update($request->only('password'));
+        $update = $qry->update(['password'=>Hash::make($request->password)]);
         if($update){
             return response('Berhasil reset password');
         }

@@ -25,9 +25,15 @@ class MahasiswaController extends MainController
      * @authenticated
      */
     public function index(){
-        $this->setRecord();
-        return MahasiswaResource::collection($this->record->get());
+        $user = Auth::user();
+        if($user->dosen()->count() > 0){
+            $dosen = $this->model::where('dosen_id',$user->dosen->id);
+        }else{
+            $dosen = $this->setRecord();
+        }
+        return MahasiswaResource::collection($dosen->get());
     }
+
     public function show(String $uuid){
         $mhs=$this->model::where('uuid',$uuid)->firstOrFail();
         return MahasiswaResource::collection($mhs);
