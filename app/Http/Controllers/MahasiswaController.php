@@ -55,6 +55,7 @@ class MahasiswaController extends MainController
         $user->roles()->attach(1);
 
         $validatedMhs['uuid']='-';
+        $validatedMhs['dosen_id']=Auth::user()->dosen->id;
 
         $dataSave=$user->mahasiswa()->create($validatedMhs);
         $mhs = Mahasiswa::where('npm',$validatedMhs['npm'])->get();
