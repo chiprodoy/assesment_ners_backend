@@ -49,13 +49,15 @@ class MahasiswaController extends MainController
         $validateUser['nidn_npm']=$validatedMhs['npm'];
         $validateUser['password']='password';
 
+        $validatedMhs['uuid']='-';
+        $validatedMhs['dosen_id']=Auth::user()->dosen->id;
+
+        //dd($validatedMhs);
+
         $userSave=User::create($validateUser);
         $user = User::where('email',$validateUser['email'])->first();
         // attach role mahasiswa
         $user->roles()->attach(1);
-
-        $validatedMhs['uuid']='-';
-        $validatedMhs['dosen_id']=Auth::user()->dosen->id;
 
         $dataSave=$user->mahasiswa()->create($validatedMhs);
         $mhs = Mahasiswa::where('npm',$validatedMhs['npm'])->get();

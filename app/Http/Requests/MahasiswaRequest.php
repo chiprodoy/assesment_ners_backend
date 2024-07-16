@@ -27,7 +27,7 @@ class MahasiswaRequest extends FormRequest
             'nama' => ['required', 'string'],
             'email' => ['required','email'],
             'telepon' => ['required'],
-         //   'dosen_id' => ['required'],
+           // 'dosen_id' => ['required'],
         ];
     }
 

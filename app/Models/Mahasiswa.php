@@ -20,6 +20,7 @@ class Mahasiswa extends Model
         'npm',
         'uuid',
         'user_id',
+        'dosen_id'
     ];
 
      /**
