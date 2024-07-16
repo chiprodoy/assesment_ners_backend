@@ -80,7 +80,7 @@ class MahasiswaController extends MainController
 
         $qry =$this->model::where('user_id',$user_id);
         $dataSave=$qry->update($validatedMhs);
-
+        return User::find($user_id);
         $userSave=User::find($user_id)->update($validateUser);
 
         if($dataSave && $userSave){
