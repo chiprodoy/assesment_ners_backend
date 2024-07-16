@@ -26,6 +26,7 @@ class MahasiswaController extends MainController
      */
     public function index(){
         $user = Auth::user();
+        //jika level user adalah dosen
         if($user->dosen()->count() > 0){
             $dosen = $this->model::where('dosen_id',$user->dosen->id);
         }else{
@@ -67,21 +68,23 @@ class MahasiswaController extends MainController
         }
     }
 
-    public function update(MahasiswaRequest $request,$user_id=null){
+    public function update(MahasiswaRequest $request,$mahasiswa_id=null){
         $validatedMhs = $request->safe()->except(['telepon', 'email']);
         $validateUser = $request->safe()->only(['telepon', 'email']);
 
         $validateUser['name']=$validatedMhs['nama'];
         $validateUser['nidn_npm']=$validatedMhs['npm'];
 
-        if(empty($user_id)){
-            $user_id=Auth::user()->id;
+        if(empty($mahasiswa_id)){
+            $mahasiswa_id=Auth::user()->mahasiswa->id;
+
         }
 
-        $qry =$this->model::where('user_id',$user_id);
+        $qry =$this->model::where('id',$mahasiswa_id);
         $dataSave=$qry->update($validatedMhs);
-        dd(User::find($user_id));
-        $userSave=User::find($user_id)->update($validateUser);
+        $mhs =$qry->first();
+
+        $userSave=User::find($mhs->user_id)->update($validateUser);
 
         if($dataSave && $userSave){
             return MahasiswaResource::collection($qry->get());
