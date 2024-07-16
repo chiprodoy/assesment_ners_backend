@@ -53,7 +53,7 @@ Route::post('/mahasiswa', [MahasiswaController::class, 'store'])
                 ->middleware('auth:sanctum')
                 ->name('mahasiswa.store');
 
-Route::put('/mahasiswa', [MahasiswaController::class, 'update'])
+Route::put('/mahasiswa/{user_id?}', [MahasiswaController::class, 'update'])
                 ->middleware('auth:sanctum')
                 ->name('mahasiswa.update');
 
