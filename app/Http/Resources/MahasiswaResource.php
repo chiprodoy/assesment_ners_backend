@@ -20,6 +20,7 @@ class MahasiswaResource extends JsonResource
             'npm'=>$this->npm,
             'nama'=>$this->nama,
             'user'=>$this->user,
+            'dosen_id'=>$this->dosen_id,
             'created_at'=>$this->created_at,
             'updated_at'=>$this->updated_at,
         ];
