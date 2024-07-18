@@ -18,9 +18,11 @@ class AsesmenResource extends JsonResource
             'id'=>$this->id,
             'uuid'=>$this->uuid,
             'nama_asesmen'=>$this->nama_asesmen,
+            'sumber_nilai1'=>$this->sumber_nilai1,
+            'sumber_nilai2'=>$this->sumber_nilai2,
+            'mata_kuliah'=>$this->mata_kuliah,
             'created_at'=>$this->created_at,
             'updated_at'=>$this->updated_at,
-            'mata_kuliah'=>$this->mata_kuliah,
         ];
     }
 }
