@@ -17,6 +17,8 @@ return new class extends Migration
             $table->uuid();
             $table->foreignIdFor(MataKuliah::class);
             $table->string('nama_asesmen');
+            $table->string('sumber_nilai1');
+            $table->string('sumber_nilai2');
             $table->timestamps();
             $table->softDeletes();
         });
