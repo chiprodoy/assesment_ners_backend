@@ -96,6 +96,6 @@ class MahasiswaController extends MainController
         $user=User::find($mhs->user_id);
         $user->delete();
         $deletedMhs=$mhs->delete();
-
+        return response('Berhasil menghapus mahasiswa');
     }
 }
