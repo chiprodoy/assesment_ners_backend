@@ -108,6 +108,10 @@ Route::get('/profile', [ProfileController::class, 'index'])
 Route::post('/profile/reset_password', [ProfileController::class, 'resetPassword'])
                   ->middleware('auth:sanctum')
                   ->name('profile.reset_password');
+
+Route::delete('/profile', [ProfileController::class, 'destroy'])
+                ->middleware('auth:sanctum')
+                ->name('profile.destroy');
 /**
  *
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {

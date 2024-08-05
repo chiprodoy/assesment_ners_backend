@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\DosenResource;
 use App\Http\Resources\MahasiswaResource;
+use App\Models\Dosen;
 use App\Models\Mahasiswa;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -79,8 +80,12 @@ class ProfileController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy()
     {
-        //
+        Mahasiswa::where('user_id',Auth::user()->id)->delete();
+        Dosen::where('user_id',Auth::user()->id)->delete();
+        User::where('id',Auth::user()->id)->delete();
+        return response('Berhasil menghapus profile');
+
     }
 }
