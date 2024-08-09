@@ -48,5 +48,35 @@
     <button type="submit" class="btn btn-primary">Kirim</button>
   </div>
 </form>
+
+
+@if(!empty($subKompetensi))
+<table class="table table-striped mt-5">
+    <tr>
+        <td>No</td>
+        <td>ID</td>
+        <td>Kompetensi</td>
+        <td>Nama Sub Kompetensi</td>
+        <td></td>
+    </tr>
+    @foreach ($subKompetensi as $item)
+        <tr>
+            <td>{{ $loop->iteration}}</td>
+            <td>{{ $item->id}}</td>
+            <td>{{ $item->kompetensi->nama_kompetensi}}</td>
+            <td>{{ $item->nama_sub_kompetensi}}</td>
+            <td><a class="btn btn-warning btn-sm" href="{{route('subkompetensi.edit',$item->uuid).'?mata_kuliah='.request()->get('mata_kuliah').'&asesmen='.request()->get('asesmen').'&kompetensi_id='.request()->get('kompetensi_id')}}">Edit</a></td>
+            <td>
+                <form method="POST" action="{{ route('subkompetensi.destroy',$item->uuid).'?mata_kuliah='.request()->get('mata_kuliah').'&asesmen='.request()->get('asesmen').'&kompetensi_id='.request()->get('kompetensi_id')}}">
+                    @method('delete')
+                    @csrf
+                    <button class="btn btn-danger btn-sm" type="submit">Hapus</button>
+                </form>
+            </td>
+
+        </tr>
+    @endforeach
+</table>
+@endif
 </div>
 @endsection
