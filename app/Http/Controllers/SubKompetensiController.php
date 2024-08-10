@@ -66,6 +66,10 @@ class SubKompetensiController extends MainController
     public function create(Request $request)
     {
         //
+        $this->frmMethod='GET';
+        $this->frmAction = route('subkompetensi.store');
+        $this->btnText='Cari';
+        $this->frmAction = route('subkompetensi.create');
 
         $this->matakuliah = MataKuliah::all();
 
@@ -75,8 +79,14 @@ class SubKompetensiController extends MainController
         if($request->has('asesmen'))
             $this->kompetensi = Kompetensi::where('asesmen_id',$request->get('asesmen'))->get();
 
-        if($request->has('kompetensi_id'))
+        if($request->has('kompetensi_id')){
             $this->subKompetensi = SubKompetensi::where('kompetensi_id',$request->get('kompetensi_id'))->get();
+
+            $this->btnText='Simpan';
+            $this->frmMethod='POST';
+            $this->frmAction = route('subkompetensi.store');
+
+        }
 
         return view('subkompetensi.create',get_object_vars($this));
     }
@@ -118,6 +128,20 @@ class SubKompetensiController extends MainController
         }
 
         return redirect()->to('/subkompetensi/edit/'.$rec->uuid.'?mata_kuliah='.$request->get('mata_kuliah').'&asesmen='.$request->get('asesmen').'&kompetensi_id='.$request->get('kompetensi_id'))->with('message', 'Data gagal diedit');
+    }
+
+    public function store(Request $request){
+        $data = $request->only('kompetensi_id','nama_sub_kompetensi');
+        $data['uuid']='-';
+        $updated = SubKompetensi::create(
+            $data
+        );
+
+        if($updated){
+            return redirect()->to('/subkompetensi/create/?mata_kuliah='.$request->get('mata_kuliah').'&asesmen='.$request->get('asesmen').'&kompetensi_id='.$request->get('kompetensi_id'))->with('message', 'Data berhasil disimpan');
+        }
+
+        return redirect()->to('/subkompetensi/create/?mata_kuliah='.$request->get('mata_kuliah').'&asesmen='.$request->get('asesmen').'&kompetensi_id='.$request->get('kompetensi_id'))->with('message', 'Data gagal disimpan');
     }
 
         /**
