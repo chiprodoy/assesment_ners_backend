@@ -1,7 +1,7 @@
 @extends('layout.index')
 @section('content')
 <div class="container">
-<form id="form1" name="form1" method="GET">
+<form id="form1" name="form1" method="{{$frmMethod}}" action="{{$frmAction}}">
     @csrf
 <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Mata Kuliah</label>
@@ -34,18 +34,22 @@
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Kompetensi</label>
 
-        <select class="form-select" name="kompetensi" id="kompetensi" >
+        <select class="form-select" name="kompetensi_id" id="kompetensi_id" >
             <option>Pilih Kompetensi</option>
             @foreach ($kompetensi as $item)
-                <option value="{{$item->id}}" {{ $selected = ($item->id == request()->get('kompetensi') ? 'selected' : '')}}>{{ $item->nama_kompetensi}}</option>
+                <option value="{{$item->id}}" {{ $selected = ($item->id == request()->get('kompetensi_id') ? 'selected' : '')}}>{{ $item->nama_kompetensi}}</option>
             @endforeach
         </select>
+    </div>
+    <div class="mb-3">
+        <label for="nama_sub_kompetensi" class="form-label">Sub Kompetensi</label>
+        <input class="form-control" type="text" id="nama_sub_kompetensi" name="nama_sub_kompetensi" />
     </div>
 
 @endif
 
-  <div class="mb-3">
-    <button type="submit" class="btn btn-primary">Kirim</button>
+<div class="mb-3">
+        <button type="submit" class="btn btn-primary">{{$btnText}}</button>
   </div>
 </form>
 
