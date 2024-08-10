@@ -75,6 +75,9 @@ class SubKompetensiController extends MainController
         if($request->has('asesmen'))
             $this->kompetensi = Kompetensi::where('asesmen_id',$request->get('asesmen'))->get();
 
+        if($request->has('kompetensi_id'))
+            $this->subKompetensi = SubKompetensi::where('kompetensi_id',$request->get('kompetensi_id'))->get();
+
         return view('subkompetensi.create',get_object_vars($this));
     }
 
