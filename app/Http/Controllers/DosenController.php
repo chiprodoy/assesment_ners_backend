@@ -31,6 +31,7 @@ class DosenController extends MainController
         $validateUser['uuid']='-';
         $validateUser['name']=$validatedDosen['nama'];
         $validateUser['nidn_npm']=$validatedDosen['nidn'];
+        $validateUser['password'] = $request->password;
 
         $userSave=User::create($validateUser);
         $user = User::where('email',$validateUser['email'])->first();
